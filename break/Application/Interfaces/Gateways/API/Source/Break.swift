@@ -21,7 +21,6 @@
 // THE SOFTWARE.
 
 import APIKit
-import Himotoki
 
 public protocol BreakRequestType : RequestType {
 }
@@ -29,54 +28,6 @@ public protocol BreakRequestType : RequestType {
 extension BreakRequestType {
     public var baseURL:NSURL {
         return NSURL(string: "http://localhost:8888/api")!
-    }
-}
-
-public struct MeResponse {
-    public var id: Int
-    public var name: String
-    public var photoURL: NSURL
-    public var token: String
-}
-
-extension MeResponse : Decodable {
-    public static func decode(e: Extractor) throws -> MeResponse {
-        return try MeResponse(
-            id: e <| "id",
-            name: e <| "name",
-            photoURL: NSURL(string: e <| "photo_url")!,
-            token: e <| "token"
-        )
-    }
-}
-
-public struct LoginMeRequest: BreakRequestType {
-    
-    public typealias Response = MeResponse
-    
-    var params: [String: AnyObject] = [:]
-    
-    public init(name:String, email:String, photoURL:String) {
-        params["name"] = name
-        params["email"] = email
-        params["photo_url"] = photoURL
-    }
-    
-    public var method: HTTPMethod {
-        return .POST
-    }
-    
-    public var path: String {
-        return "/me/login"
-    }
-    
-    public var parameters: [String: AnyObject] {
-        return params
-    }
-    
-    public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) -> Response? {
-        print(object)
-        return try? decodeValue(object["instance"] as! [String:AnyObject])
     }
 }
 

@@ -199,7 +199,7 @@
         <!--Login Controller-->
         <scene sceneID="boW-aI-7UP">
             <objects>
-                <viewController id="E7a-2L-B7a" customClass="LoginController" customModule="break" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginController" id="E7a-2L-B7a" customClass="LoginController" customModule="break" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9UC-sZ-0kh"/>
                         <viewControllerLayoutGuide type="bottom" id="80L-j6-3ji"/>

@@ -23,6 +23,8 @@ class LoginController: UIViewController {
             switch response {
             case .Success(let meResponse):
                 print(meResponse)
+                let ud = NSUserDefaults.standardUserDefaults()
+                ud.setObject("token", forKey: meResponse.token)
                 // TODO push to next controller.
                 break
             case .Failure(let error):

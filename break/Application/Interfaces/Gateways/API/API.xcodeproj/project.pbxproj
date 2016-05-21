@@ -15,6 +15,9 @@
 		EF7CCAE61CF075CC00E532A7 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAE51CF075CC00E532A7 /* APIKit.framework */; };
 		EF7CCAE81CF075D200E532A7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAE71CF075D200E532A7 /* Result.framework */; };
 		EF7CCAF51CF07FCD00E532A7 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAF41CF07FCD00E532A7 /* Himotoki.framework */; };
+		EF7CCB1F1CF0904500E532A7 /* Me.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CCB1E1CF0904500E532A7 /* Me.swift */; };
+		EF7CCB211CF0956E00E532A7 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CCB201CF0956E00E532A7 /* Spot.swift */; };
+		EF7CCB231CF0C3CD00E532A7 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CCB221CF0C3CD00E532A7 /* Tour.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		EF7CCAE51CF075CC00E532A7 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = APIKit.framework; sourceTree = "<group>"; };
 		EF7CCAE71CF075D200E532A7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Result.framework; sourceTree = "<group>"; };
 		EF7CCAF41CF07FCD00E532A7 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Himotoki.framework; sourceTree = "<group>"; };
+		EF7CCB1E1CF0904500E532A7 /* Me.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Me.swift; sourceTree = "<group>"; };
+		EF7CCB201CF0956E00E532A7 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
+		EF7CCB221CF0C3CD00E532A7 /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,9 @@
 				799BAC191CEF7FB6005F3F67 /* API.h */,
 				799BAC1B1CEF7FB6005F3F67 /* Info.plist */,
 				799EAC7E1CF0066E00AB9F9F /* Break.swift */,
+				EF7CCB1E1CF0904500E532A7 /* Me.swift */,
+				EF7CCB201CF0956E00E532A7 /* Spot.swift */,
+				EF7CCB221CF0C3CD00E532A7 /* Tour.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -233,6 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				799EAC7F1CF0066E00AB9F9F /* Break.swift in Sources */,
+				EF7CCB211CF0956E00E532A7 /* Spot.swift in Sources */,
+				EF7CCB1F1CF0904500E532A7 /* Me.swift in Sources */,
+				EF7CCB231CF0C3CD00E532A7 /* Tour.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
