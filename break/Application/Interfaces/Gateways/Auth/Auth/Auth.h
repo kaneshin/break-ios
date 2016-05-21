@@ -16,4 +16,10 @@ FOUNDATION_EXPORT const unsigned char AuthVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Auth/PublicHeader.h>
 
+#ifndef Auth_h
+#define Auth_h
 
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
+#endif

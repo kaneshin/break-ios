@@ -30,6 +30,11 @@
 		799EACBE1CF0271600AB9F9F /* SearchTourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EACBD1CF0271600AB9F9F /* SearchTourController.swift */; };
 		799EACC01CF0272600AB9F9F /* MypageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EACBF1CF0272600AB9F9F /* MypageController.swift */; };
 		799EACC21CF0275000AB9F9F /* CreateTourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EACC11CF0275000AB9F9F /* CreateTourController.swift */; };
+		EF7CCAE41CF0707C00E532A7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CCAE31CF0707C00E532A7 /* LoginController.swift */; };
+		EF7CCAED1CF07CA700E532A7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAEB1CF07CA700E532A7 /* FBSDKLoginKit.framework */; };
+		EF7CCAEE1CF07CA700E532A7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAEC1CF07CA700E532A7 /* FBSDKCoreKit.framework */; };
+		EF7CCAF21CF07FB600E532A7 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAF11CF07FB600E532A7 /* Himotoki.framework */; };
+		EF7CCAF31CF07FC300E532A7 /* Himotoki.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAF11CF07FB600E532A7 /* Himotoki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +87,20 @@
 			remoteGlobalIDString = 7952C3F71CF03C3B00E75A43;
 			remoteInfo = Auth;
 		};
+		EF7CCAC21CF0540D00E532A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7952C4031CF03C3B00E75A43 /* Auth.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7952C4121CF03DDA00E75A43;
+			remoteInfo = Tests;
+		};
+		EF7CCAC51CF0540D00E532A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7952C3D71CF03A4E00E75A43 /* Location.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7952C4211CF03DE500E75A43;
+			remoteInfo = Tests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,6 +110,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				EF7CCAF31CF07FC300E532A7 /* Himotoki.framework in Embed Frameworks */,
 				799BAC7A1CEF8CFE005F3F67 /* Result.framework in Embed Frameworks */,
 				7952C40B1CF03C7F00E75A43 /* Auth.framework in Embed Frameworks */,
 				7952C3E71CF03A7E00E75A43 /* API.framework in Embed Frameworks */,
@@ -123,6 +143,10 @@
 		799EACBD1CF0271600AB9F9F /* SearchTourController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTourController.swift; sourceTree = "<group>"; };
 		799EACBF1CF0272600AB9F9F /* MypageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MypageController.swift; sourceTree = "<group>"; };
 		799EACC11CF0275000AB9F9F /* CreateTourController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTourController.swift; sourceTree = "<group>"; };
+		EF7CCAE31CF0707C00E532A7 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		EF7CCAEB1CF07CA700E532A7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = break/Application/Interfaces/Gateways/Auth/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		EF7CCAEC1CF07CA700E532A7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = break/Application/Interfaces/Gateways/Auth/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		EF7CCAF11CF07FB600E532A7 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,8 +158,11 @@
 				799EACBA1CF025B400AB9F9F /* MapKit.framework in Frameworks */,
 				799BAC791CEF8CFE005F3F67 /* Result.framework in Frameworks */,
 				799BAC771CEF8CFE005F3F67 /* APIKit.framework in Frameworks */,
+				EF7CCAED1CF07CA700E532A7 /* FBSDKLoginKit.framework in Frameworks */,
+				EF7CCAEE1CF07CA700E532A7 /* FBSDKCoreKit.framework in Frameworks */,
 				7952C40A1CF03C7F00E75A43 /* Auth.framework in Frameworks */,
 				7952C3E61CF03A7E00E75A43 /* API.framework in Frameworks */,
+				EF7CCAF21CF07FB600E532A7 /* Himotoki.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				7952C3DC1CF03A4F00E75A43 /* Location.framework */,
+				EF7CCAC61CF0540D00E532A7 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				7952C4081CF03C3D00E75A43 /* Auth.framework */,
+				EF7CCAC31CF0540D00E532A7 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,6 +252,7 @@
 				799EACBD1CF0271600AB9F9F /* SearchTourController.swift */,
 				799EACBF1CF0272600AB9F9F /* MypageController.swift */,
 				799EACC11CF0275000AB9F9F /* CreateTourController.swift */,
+				EF7CCAE31CF0707C00E532A7 /* LoginController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -249,6 +279,9 @@
 		799BAC7B1CEF8D03005F3F67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF7CCAF11CF07FB600E532A7 /* Himotoki.framework */,
+				EF7CCAEB1CF07CA700E532A7 /* FBSDKLoginKit.framework */,
+				EF7CCAEC1CF07CA700E532A7 /* FBSDKCoreKit.framework */,
 				799EACB91CF025B400AB9F9F /* MapKit.framework */,
 				799BAC751CEF8CFE005F3F67 /* APIKit.framework */,
 				799BAC761CEF8CFE005F3F67 /* Result.framework */,
@@ -365,6 +398,20 @@
 			remoteRef = 7952C4071CF03C3D00E75A43 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		EF7CCAC31CF0540D00E532A7 /* Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Tests.xctest;
+			remoteRef = EF7CCAC21CF0540D00E532A7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EF7CCAC61CF0540D00E532A7 /* Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Tests.xctest;
+			remoteRef = EF7CCAC51CF0540D00E532A7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -390,6 +437,7 @@
 				799EACC21CF0275000AB9F9F /* CreateTourController.swift in Sources */,
 				799EACBE1CF0271600AB9F9F /* SearchTourController.swift in Sources */,
 				7952C3BF1CF035D900E75A43 /* TableViewCell.swift in Sources */,
+				EF7CCAE41CF0707C00E532A7 /* LoginController.swift in Sources */,
 				799EAC811CF0187D00AB9F9F /* NavigationController.swift in Sources */,
 				799EACB61CF01BC500AB9F9F /* Color.swift in Sources */,
 				799EACC01CF0272600AB9F9F /* MypageController.swift in Sources */,
@@ -524,15 +572,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/break/Application/Interfaces/Gateways/Auth",
+					"$(PROJECT_DIR)/break/Application/Interfaces/Gateways/API",
 				);
 				INFOPLIST_FILE = break/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.kaneshin.break;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -540,15 +594,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/break/Application/Interfaces/Gateways/Auth",
+					"$(PROJECT_DIR)/break/Application/Interfaces/Gateways/API",
 				);
 				INFOPLIST_FILE = break/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.kaneshin.break;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

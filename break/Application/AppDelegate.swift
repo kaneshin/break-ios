@@ -23,13 +23,21 @@
 import UIKit
 import API
 import APIKit
+import Auth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    let facebook: FacebookApplication = FacebookApplication()
+
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        return facebook.application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        facebook.application(application, didFinishLaunchingWithOptions: launchOptions)
         return true
     }
 
@@ -49,4 +57,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-

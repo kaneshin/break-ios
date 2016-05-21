@@ -21,86 +21,64 @@
 // THE SOFTWARE.
 
 import APIKit
+import Himotoki
 
 public protocol BreakRequestType : RequestType {
 }
 
 extension BreakRequestType {
     public var baseURL:NSURL {
-        return NSURL(string: "http://example.com")!
+        return NSURL(string: "http://localhost:8888/api")!
     }
 }
 
-public struct HogeData {
-    public var defaultGender: String = ""
-    public var defaultMainImageURL: String = ""
-    public var defaultNickname: String = ""
-    public var defaultResidenceCountryID: Int = 0
-    public var defaultResidenceStateID: Int = 0
-    public var newUser: Int = 0
+public struct MeResponse {
+    public var id: Int
+    public var name: String
+    public var photoURL: NSURL
+    public var token: String
 }
 
-extension HogeData {
-    public init?(dictionary: [String: AnyObject]) {
-        guard let gender = dictionary["default_gender"] as? String else {
-            return nil
-        }
-        guard let mainImageURL = dictionary["default_main_image_url"] as? String else {
-            return nil
-        }
-        guard let nickname = dictionary["default_nickname"] as? String else {
-            return nil
-        }
-        guard let residenceCountryID = dictionary["default_residence_country_id"] as? Int else {
-            return nil
-        }
-        guard let residenceStateID = dictionary["default_residence_state_id"] as? Int else {
-            return nil
-        }
-        guard let newUser = dictionary["new_user"] as? Int else {
-            return nil
-        }
-
-        self.defaultGender = gender
-        self.defaultMainImageURL = mainImageURL
-        self.defaultNickname = nickname
-        self.defaultResidenceCountryID = residenceCountryID
-        self.defaultResidenceStateID = residenceStateID
-        self.newUser = newUser
+extension MeResponse : Decodable {
+    public static func decode(e: Extractor) throws -> MeResponse {
+        return try MeResponse(
+            id: e <| "id",
+            name: e <| "name",
+            photoURL: NSURL(string: e <| "photo_url")!,
+            token: e <| "token"
+        )
     }
 }
 
-public struct GETHogeRequest: BreakRequestType {
-
-    public typealias Response = WelcomeData
-
+public struct LoginMeRequest: BreakRequestType {
+    
+    public typealias Response = MeResponse
+    
+    var params: [String: AnyObject] = [:]
+    
+    public init(name:String, email:String, photoURL:String) {
+        params["name"] = name
+        params["email"] = email
+        params["photo_url"] = photoURL
+    }
+    
     public var method: HTTPMethod {
-        return .GET
+        return .POST
     }
-
+    
     public var path: String {
-        return "/me/welcome"
+        return "/me/login"
     }
-
+    
     public var parameters: [String: AnyObject] {
-        var result: [String: AnyObject] = [:]
-        result["device"] = "pc"
-        return result
+        return params
     }
-
-    public init() {}
-
+    
     public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) -> Response? {
-        guard let dictionary = object as? [String: AnyObject] else {
-            return nil
-        }
-
-        guard let welcomeData = WelcomeData(dictionary: dictionary) else {
-            return nil
-        }
-        
-        return welcomeData
+        return try? decodeValue(object["instance"] as! [String:AnyObject])
     }
 }
+
+
 
 

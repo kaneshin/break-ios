@@ -7,18 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7915969F1CEFE95600C42A5A /* APIKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 799BAC631CEF8510005F3F67 /* APIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		791596A01CEFE95600C42A5A /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 799BAC641CEF8510005F3F67 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		791596A11CEFE95600C42A5A /* API.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 799BAC161CEF7FB6005F3F67 /* API.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		799BAC1A1CEF7FB6005F3F67 /* API.h in Headers */ = {isa = PBXBuildFile; fileRef = 799BAC191CEF7FB6005F3F67 /* API.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		799BAC501CEF80DE005F3F67 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799BAC4F1CEF80DE005F3F67 /* Tests.swift */; };
 		799BAC521CEF80DE005F3F67 /* API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799BAC161CEF7FB6005F3F67 /* API.framework */; };
-		799BAC651CEF8510005F3F67 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799BAC631CEF8510005F3F67 /* APIKit.framework */; };
-		799BAC661CEF8510005F3F67 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799BAC641CEF8510005F3F67 /* Result.framework */; };
-		799BAC681CEF8551005F3F67 /* Pairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799BAC671CEF8551005F3F67 /* Pairs.swift */; };
-		799BAC6B1CEF8AFB005F3F67 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799BAC631CEF8510005F3F67 /* APIKit.framework */; };
-		799BAC6C1CEF8AFB005F3F67 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799BAC641CEF8510005F3F67 /* Result.framework */; };
 		799EAC7F1CF0066E00AB9F9F /* Break.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EAC7E1CF0066E00AB9F9F /* Break.swift */; };
+		EF7CCAE61CF075CC00E532A7 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAE51CF075CC00E532A7 /* APIKit.framework */; };
+		EF7CCAE81CF075D200E532A7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAE71CF075D200E532A7 /* Result.framework */; };
+		EF7CCAF51CF07FCD00E532A7 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAF41CF07FCD00E532A7 /* Himotoki.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +34,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7915969F1CEFE95600C42A5A /* APIKit.framework in CopyFiles */,
-				791596A01CEFE95600C42A5A /* Result.framework in CopyFiles */,
 				791596A11CEFE95600C42A5A /* API.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,10 +47,10 @@
 		799BAC4D1CEF80DE005F3F67 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		799BAC4F1CEF80DE005F3F67 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		799BAC511CEF80DE005F3F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		799BAC631CEF8510005F3F67 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
-		799BAC641CEF8510005F3F67 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
-		799BAC671CEF8551005F3F67 /* Pairs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pairs.swift; sourceTree = "<group>"; };
 		799EAC7E1CF0066E00AB9F9F /* Break.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Break.swift; sourceTree = "<group>"; };
+		EF7CCAE51CF075CC00E532A7 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = APIKit.framework; sourceTree = "<group>"; };
+		EF7CCAE71CF075D200E532A7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Result.framework; sourceTree = "<group>"; };
+		EF7CCAF41CF07FCD00E532A7 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Himotoki.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +58,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				799BAC651CEF8510005F3F67 /* APIKit.framework in Frameworks */,
-				799BAC661CEF8510005F3F67 /* Result.framework in Frameworks */,
+				EF7CCAE61CF075CC00E532A7 /* APIKit.framework in Frameworks */,
+				EF7CCAE81CF075D200E532A7 /* Result.framework in Frameworks */,
+				EF7CCAF51CF07FCD00E532A7 /* Himotoki.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,8 +68,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				799BAC6B1CEF8AFB005F3F67 /* APIKit.framework in Frameworks */,
-				799BAC6C1CEF8AFB005F3F67 /* Result.framework in Frameworks */,
 				799BAC521CEF80DE005F3F67 /* API.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,7 +99,6 @@
 			children = (
 				799BAC191CEF7FB6005F3F67 /* API.h */,
 				799BAC1B1CEF7FB6005F3F67 /* Info.plist */,
-				799BAC671CEF8551005F3F67 /* Pairs.swift */,
 				799EAC7E1CF0066E00AB9F9F /* Break.swift */,
 			);
 			path = Source;
@@ -124,8 +116,9 @@
 		799BAC5C1CEF8273005F3F67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				799BAC631CEF8510005F3F67 /* APIKit.framework */,
-				799BAC641CEF8510005F3F67 /* Result.framework */,
+				EF7CCAF41CF07FCD00E532A7 /* Himotoki.framework */,
+				EF7CCAE71CF075D200E532A7 /* Result.framework */,
+				EF7CCAE51CF075CC00E532A7 /* APIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -239,7 +232,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				799BAC681CEF8551005F3F67 /* Pairs.swift in Sources */,
 				799EAC7F1CF0066E00AB9F9F /* Break.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,9 +356,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				INSTALL_PATH = "@rpath";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.kaneshin.API;
@@ -385,9 +378,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				INSTALL_PATH = "@rpath";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.kaneshin.API;
