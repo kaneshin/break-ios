@@ -23,13 +23,16 @@
 import UIKit
 import API
 import APIKit
+import Location
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let tracker = Location.Tracker()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        tracker.startUpdatingLocation()
         return true
     }
 

@@ -1,1 +1,2 @@
 github "ishkawa/APIKit" ~> 1.3.0
+github "realm/realm-cocoa"

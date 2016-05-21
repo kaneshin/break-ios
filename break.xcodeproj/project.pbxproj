@@ -15,6 +15,10 @@
 		7952C3EB1CF03A8C00E75A43 /* Location.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C3DC1CF03A4F00E75A43 /* Location.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7952C40A1CF03C7F00E75A43 /* Auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C4081CF03C3D00E75A43 /* Auth.framework */; };
 		7952C40B1CF03C7F00E75A43 /* Auth.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C4081CF03C3D00E75A43 /* Auth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7952C4401CF061CF00E75A43 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C43E1CF061CE00E75A43 /* Realm.framework */; };
+		7952C4411CF061CF00E75A43 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C43E1CF061CE00E75A43 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7952C4421CF061CF00E75A43 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C43F1CF061CE00E75A43 /* RealmSwift.framework */; };
+		7952C4431CF061CF00E75A43 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C43F1CF061CE00E75A43 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		799BAC401CEF80A1005F3F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799BAC2E1CEF80A1005F3F67 /* AppDelegate.swift */; };
 		799BAC421CEF80A1005F3F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799BAC3A1CEF80A1005F3F67 /* Assets.xcassets */; };
 		799BAC431CEF80A1005F3F67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799BAC3B1CEF80A1005F3F67 /* LaunchScreen.storyboard */; };
@@ -82,6 +86,20 @@
 			remoteGlobalIDString = 7952C3F71CF03C3B00E75A43;
 			remoteInfo = Auth;
 		};
+		7952C4321CF04B9600E75A43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7952C4031CF03C3B00E75A43 /* Auth.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7952C4121CF03DDA00E75A43;
+			remoteInfo = Tests;
+		};
+		7952C4351CF04B9600E75A43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7952C3D71CF03A4E00E75A43 /* Location.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7952C4211CF03DE500E75A43;
+			remoteInfo = Tests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,7 +109,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7952C4411CF061CF00E75A43 /* Realm.framework in Embed Frameworks */,
 				799BAC7A1CEF8CFE005F3F67 /* Result.framework in Embed Frameworks */,
+				7952C4431CF061CF00E75A43 /* RealmSwift.framework in Embed Frameworks */,
 				7952C40B1CF03C7F00E75A43 /* Auth.framework in Embed Frameworks */,
 				7952C3E71CF03A7E00E75A43 /* API.framework in Embed Frameworks */,
 				799BAC781CEF8CFE005F3F67 /* APIKit.framework in Embed Frameworks */,
@@ -108,6 +128,8 @@
 		7952C3D71CF03A4E00E75A43 /* Location.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Location.xcodeproj; path = Location/Location.xcodeproj; sourceTree = "<group>"; };
 		7952C3DD1CF03A7300E75A43 /* API.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = API.xcodeproj; path = API/API.xcodeproj; sourceTree = "<group>"; };
 		7952C4031CF03C3B00E75A43 /* Auth.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Auth.xcodeproj; path = Auth/Auth.xcodeproj; sourceTree = "<group>"; };
+		7952C43E1CF061CE00E75A43 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		7952C43F1CF061CE00E75A43 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		799BABEE1CEF7D05005F3F67 /* break.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = break.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		799BAC2E1CEF80A1005F3F67 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		799BAC3A1CEF80A1005F3F67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,7 +156,9 @@
 				799EACBA1CF025B400AB9F9F /* MapKit.framework in Frameworks */,
 				799BAC791CEF8CFE005F3F67 /* Result.framework in Frameworks */,
 				799BAC771CEF8CFE005F3F67 /* APIKit.framework in Frameworks */,
+				7952C4401CF061CF00E75A43 /* Realm.framework in Frameworks */,
 				7952C40A1CF03C7F00E75A43 /* Auth.framework in Frameworks */,
+				7952C4421CF061CF00E75A43 /* RealmSwift.framework in Frameworks */,
 				7952C3E61CF03A7E00E75A43 /* API.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				7952C3DC1CF03A4F00E75A43 /* Location.framework */,
+				7952C4361CF04B9600E75A43 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				7952C4081CF03C3D00E75A43 /* Auth.framework */,
+				7952C4331CF04B9600E75A43 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -249,6 +275,8 @@
 		799BAC7B1CEF8D03005F3F67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7952C43E1CF061CE00E75A43 /* Realm.framework */,
+				7952C43F1CF061CE00E75A43 /* RealmSwift.framework */,
 				799EACB91CF025B400AB9F9F /* MapKit.framework */,
 				799BAC751CEF8CFE005F3F67 /* APIKit.framework */,
 				799BAC761CEF8CFE005F3F67 /* Result.framework */,
@@ -301,6 +329,11 @@
 				TargetAttributes = {
 					799BABED1CEF7D05005F3F67 = {
 						CreatedOnToolsVersion = 7.3.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -363,6 +396,20 @@
 			fileType = wrapper.framework;
 			path = Auth.framework;
 			remoteRef = 7952C4071CF03C3D00E75A43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7952C4331CF04B9600E75A43 /* Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Tests.xctest;
+			remoteRef = 7952C4321CF04B9600E75A43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7952C4361CF04B9600E75A43 /* Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Tests.xctest;
+			remoteRef = 7952C4351CF04B9600E75A43 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
