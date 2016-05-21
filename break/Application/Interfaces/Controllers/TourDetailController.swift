@@ -22,7 +22,7 @@
 
 import UIKit
 
-class SearchTourController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TourDetailController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -32,8 +32,7 @@ class SearchTourController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tourCellNib = UINib.init(nibName: "TableViewCell", bundle: nil)
-        tableView.registerNib(tourCellNib, forCellReuseIdentifier: "TourCell")
+        tableView.registerNib(TourListCell.nib, forCellReuseIdentifier: TourListCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -50,7 +49,7 @@ class SearchTourController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TourCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("TourListCell", forIndexPath: indexPath)
         return cell
     }
 
@@ -60,5 +59,5 @@ class SearchTourController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     }
-
+    
 }

@@ -22,6 +22,15 @@
 
 import UIKit
 
-class CreateTourController: UIViewController {
+class TourCreateController: UIViewController {
 
+    @IBAction func unwindModal(segue: UIStoryboardSegue) {
+
+    }
+//        var tappedButton:UIButton = sender as UIButton
+//        tappedButton.setTitle("tapped", forState:UIControlState.Normal)
+//    }
+//    - (IBAction)unwindToTop:(UIStoryboardSegue *)segue
+//    {
+//    }
 }

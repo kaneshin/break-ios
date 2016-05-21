@@ -1,3 +1,4 @@
 github "ikesyo/Himotoki" "2.0.1"
 github "antitypical/Result" "2.0.0"
+github "realm/realm-cocoa" "v0.103.1"
 github "ishkawa/APIKit" "1.4.1"

@@ -24,12 +24,13 @@ import UIKit
 import API
 import APIKit
 import Auth
+import Location
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
+        
     let facebook: FacebookApplication = FacebookApplication()
 
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
@@ -38,6 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         facebook.application(application, didFinishLaunchingWithOptions: launchOptions)
+        let tracker = Location.Tracker()
+        tracker.startUpdatingLocation()
         return true
     }
 
