@@ -1,4 +1,4 @@
-// Color.swift
+// DateTests.swift
 //
 // Copyright (c) 2016 kaneshin.co
 //
@@ -20,9 +20,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import UIKit
+import XCTest
 
-struct Color {
-    let navigationBarColor = UIColor.whiteColor()
-    let breakBlueColor = UIColor(red: 24/255.0, green: 100/255.0, blue: 165/255.0, alpha: 1.0)
+class DateTests: XCTestCase {
+
+    let formatter: NSDateFormatter = NSDateFormatter()
+
+    override func setUp() {
+        super.setUp()
+    }
+
+    override func tearDown() {
+        super.tearDown()
+    }
+
+    func testString() {
+        formatter.dateFormat = "yyyy/MM/dd HH:mm:ss Z"
+
+        let fromString = "2015/03/04 08:04:56 +09:00"
+        let toString = "2015/03/04 14:50:56 +09:00"
+        let from: NSDate? = formatter.dateFromString(fromString)
+        let to: NSDate? = formatter.dateFromString(toString)
+
+        XCTAssertEqual("AM 08:04 - ", NSDate.string(.TourList, from: from, to: nil))
+        XCTAssertEqual(" - PM 02:50", NSDate.string(.TourList, from: nil, to: to))
+        XCTAssertEqual("AM 08:04 - PM 02:50", NSDate.string(.TourList, from: from, to: to))
+    }
+
 }

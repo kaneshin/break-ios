@@ -56,6 +56,27 @@ class ImageView: UIImageView {
 
 }
 
+enum ImageBorder {
+    case None
+    case White
+    var width: CGFloat {
+        switch self {
+        case .None:
+            return 0.0
+        case .White:
+            return 2.0
+        }
+    }
+    var color: UIColor {
+        switch self {
+        case .None:
+            return UIColor.clearColor()
+        case .White:
+            return UIColor.whiteColor()
+        }
+    }
+}
+
 class CircleImageView: ImageView {
 
     override func configureView() {
@@ -63,4 +84,14 @@ class CircleImageView: ImageView {
         self.cornerRadius = self.bounds.height / 2
     }
     
+}
+
+class WhiteBorderCircleImageView: CircleImageView {
+
+    override func configureView() {
+        super.configureView()
+        self.borderWidth = 2.0
+        self.borderColor = UIColor.whiteColor()
+    }
+
 }

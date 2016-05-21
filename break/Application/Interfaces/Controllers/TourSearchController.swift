@@ -41,15 +41,23 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: - Table View
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 5
+        return 1
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 100
+    }
+
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return TourListCell.heightForRow
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TourListCell", forIndexPath: indexPath)
+        if let cell = cell as? TourListCell {
+            let from: NSDate = NSDate().dateByAddingTimeInterval(-10000)
+            cell.date(from, to: NSDate())
+        }
         return cell
     }
 

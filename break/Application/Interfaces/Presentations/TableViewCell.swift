@@ -30,7 +30,17 @@ class TableViewCell: UITableViewCell {
 
 class TourListCell: TableViewCell {
 
-    static let identifier: String = "TourListCell"
+    @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var likeCountLabel: UILabel!
 
+    static let identifier: String = "TourListCell"
+    static let heightForRow: CGFloat = 280.0
+
+    func date(from: NSDate, to: NSDate) {
+        self.dateLabel.text = from.string(.TourList, to: to)
+    }
     
 }
