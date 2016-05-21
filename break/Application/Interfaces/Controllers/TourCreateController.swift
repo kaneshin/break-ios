@@ -87,15 +87,14 @@ class TourCreateController: UIViewController, UITableViewDelegate, UITableViewDa
             return tableView.dequeueReusableCellWithIdentifier(sec.identifier, forIndexPath: indexPath)
         }()
         if let cell = cell as? TourListCell {
-            cell.hideLikeView()
+            cell.editable = true
+            cell.hideLikeView = true
             let from: NSDate = NSDate().dateByAddingTimeInterval(-10000)
             let imageURL: NSURL = NSURL(string: "http://placehold.it/\(rand()%1000)x\(rand()%1000)")!
             let userImageURL: NSURL = NSURL(string: "https://avatars2.githubusercontent.com/u/1888355?v=3&s=400")!
-            cell.mainImageView.setImageWithURL(imageURL, placeholderImage: nil, completionHandler: { (image, error) in
-            })
-            cell.userImageView.setImageWithURL(userImageURL, placeholderImage: nil, completionHandler: { (image, error) in
-            })
-            cell.titleLabel.text = "山下です。こんばんは。"
+            cell.mainImageView.setImageWithURL(imageURL)
+            cell.userImageView.setImageWithURL(userImageURL)
+            cell.titleTextField.text = "Tap to rename"
             cell.date(from, to: NSDate())
         }
         return cell

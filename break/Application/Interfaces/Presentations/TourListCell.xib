@@ -31,15 +31,14 @@
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xOv-zt-gwz">
                         <rect key="frame" x="15" y="219" width="410" height="47"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Awesome!! Minato ku Tokyo city :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xH-2g-Fnr">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Awesome!! Minato ku Tokyo city :)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6EZ-1L-qAC">
                                 <rect key="frame" x="0.0" y="0.0" width="410" height="17"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="Wef-do-F5g"/>
+                                    <constraint firstAttribute="height" constant="17" id="O6M-dr-fDz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54i-Lv-5bG">
                                 <rect key="frame" x="0.0" y="17" width="410" height="30"/>
                                 <subviews>
@@ -104,7 +103,7 @@
                 <outlet property="likeCountLabel" destination="yDm-cJ-NQB" id="QjD-wW-dXn"/>
                 <outlet property="likeImageView" destination="lun-fe-rrw" id="hh0-VY-eRU"/>
                 <outlet property="mainImageView" destination="2ca-U6-oAI" id="3Yy-Hu-6T8"/>
-                <outlet property="titleLabel" destination="6xH-2g-Fnr" id="vmo-Un-nwo"/>
+                <outlet property="titleTextField" destination="6EZ-1L-qAC" id="QAz-XI-tAP"/>
                 <outlet property="userImageView" destination="5tD-PW-TL5" id="0u6-6Z-5YG"/>
             </connections>
             <point key="canvasLocation" x="607" y="79"/>
