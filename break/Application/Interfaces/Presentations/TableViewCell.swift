@@ -107,6 +107,10 @@ class TourListCell: TableViewCell, UITextFieldDelegate {
         return true
     }
 
+    override func resignFirstResponder() -> Bool {
+        return titleTextField.resignFirstResponder()
+    }
+
 }
 
 class TourItemCell: TableViewCell {
