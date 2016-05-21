@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--break;-->
+        <!--Tour Search Controller-->
         <scene sceneID="ZnK-hg-Sbz">
             <objects>
                 <viewController storyboardIdentifier="TourSearchController" id="j45-Jx-65w" customClass="TourSearchController" customModule="break" customModuleProvider="target" sceneMemberID="viewController">
@@ -48,8 +48,26 @@
                             <constraint firstItem="zFu-By-NBg" firstAttribute="top" secondItem="gzD-KC-X5D" secondAttribute="bottom" id="cHm-Lh-koM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="break;" id="VH0-yB-r8c">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="ZFX-zL-FJB">
+                    <navigationItem key="navigationItem" id="VH0-yB-r8c">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="1Ec-lP-kI2">
+                            <rect key="frame" x="180" y="6" width="240" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_logo_head_break" translatesAutoresizingMaskIntoConstraints="NO" id="g6h-Om-Tmp">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="33"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="g6h-Om-Tmp" firstAttribute="leading" secondItem="1Ec-lP-kI2" secondAttribute="leading" id="bJH-0o-XQf"/>
+                                <constraint firstItem="g6h-Om-Tmp" firstAttribute="top" secondItem="1Ec-lP-kI2" secondAttribute="top" id="rH6-9G-0F8"/>
+                                <constraint firstAttribute="bottom" secondItem="g6h-Om-Tmp" secondAttribute="bottom" id="uZx-Gj-U8f"/>
+                                <constraint firstAttribute="trailing" secondItem="g6h-Om-Tmp" secondAttribute="trailing" id="v2O-Ty-9Oj"/>
+                            </constraints>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" image="icon_mypage_head_bresk" style="plain" id="ZFX-zL-FJB">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             <connections>
                                 <segue destination="nde-2I-Khr" kind="show" id="AGR-dI-ceP"/>
                             </connections>
@@ -216,6 +234,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_mypage_head_bresk" width="27" height="27"/>
+        <image name="image_logo_head_break" width="86" height="18"/>
         <image name="zoi01" width="213" height="144"/>
     </resources>
 </document>

@@ -1,4 +1,4 @@
-// TableViewCell.swift
+// Date.swift
 //
 // Copyright (c) 2016 kaneshin.co
 //
@@ -20,25 +20,36 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import UIKit
+import Foundation
 
-class TableViewCell: UITableViewCell {
+enum DateLayout {
+    case TourList
 
-    static let nib = UINib.init(nibName: "TableViewCell", bundle: nil)
-
+    var string: String {
+        switch self {
+        case TourList:
+            return "a hh:mm"
+        }
+    }
 }
 
-class TourListCell: TableViewCell {
+var regularFormatter: NSDateFormatter = {
+    let formatter =  NSDateFormatter()
+    formatter.AMSymbol = "AM"
+    formatter.PMSymbol = "PM"
+    return formatter
+}()
 
-    @IBOutlet weak var mainImageView: UIImageView!
-    @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var likeCountLabel: UILabel!
-
-    static let identifier: String = "TourListCell"
-    static let heightForRow: CGFloat = 280.0
-
-    
-    
+extension NSDate {
+    class func string(layout: DateLayout, from: NSDate?, to: NSDate?) -> String {
+        var elms: [String] = ["", ""]
+        regularFormatter.dateFormat = layout.string
+        if let from = from {
+            elms[0] = regularFormatter.stringFromDate(from)
+        }
+        if let to = to {
+            elms[1] = regularFormatter.stringFromDate(to)
+        }
+        return elms.joinWithSeparator(" - ")
+    }
 }

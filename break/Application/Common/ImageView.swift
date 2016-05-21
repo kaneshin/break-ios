@@ -64,3 +64,13 @@ class CircleImageView: ImageView {
     }
     
 }
+
+class WhiteBorderCircleImageView: CircleImageView {
+
+    override func configureView() {
+        super.configureView()
+        self.borderWidth = 2.0
+        self.borderColor = UIColor.whiteColor()
+    }
+
+}

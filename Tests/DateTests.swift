@@ -1,4 +1,4 @@
-// TableViewCell.swift
+// DateTests.swift
 //
 // Copyright (c) 2016 kaneshin.co
 //
@@ -20,25 +20,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import UIKit
+import XCTest
 
-class TableViewCell: UITableViewCell {
+class DateTests: XCTestCase {
 
-    static let nib = UINib.init(nibName: "TableViewCell", bundle: nil)
+    let formatter: NSDateFormatter = NSDateFormatter()
 
-}
+    override func setUp() {
+        super.setUp()
+    }
 
-class TourListCell: TableViewCell {
+    override func tearDown() {
+        super.tearDown()
+    }
 
-    @IBOutlet weak var mainImageView: UIImageView!
-    @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var likeCountLabel: UILabel!
+    func testString() {
+        formatter.dateFormat = "yyyy/MM/dd HH:mm:ss Z"
 
-    static let identifier: String = "TourListCell"
-    static let heightForRow: CGFloat = 280.0
+        let fromString = "2015/03/04 08:04:56 +09:00"
+        let toString = "2015/03/04 14:50:56 +09:00"
+        let from: NSDate? = formatter.dateFromString(fromString)
+        let to: NSDate? = formatter.dateFromString(toString)
 
-    
-    
+        XCTAssertEqual("AM 08:04 - ", NSDate.string(.TourList, from: from, to: nil))
+        XCTAssertEqual(" - PM 02:50", NSDate.string(.TourList, from: nil, to: to))
+        XCTAssertEqual("AM 08:04 - PM 02:50", NSDate.string(.TourList, from: from, to: to))
+    }
+
 }
