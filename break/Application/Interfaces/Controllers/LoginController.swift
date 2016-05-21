@@ -11,13 +11,18 @@ import API
 import Auth
 import APIKit
 
-class LoginController: UIViewController {
+class LoginController: UIViewController, UIScrollViewDelegate {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    func loginBreak(name:String, email:String, photoURL:String) {
+    func pushToTourSearchController() {
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TourSearchController")
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func login(name:String, email:String, photoURL:String) {
         let request : LoginMeRequest = LoginMeRequest(name: name, email: email, photoURL:photoURL)
         Session.sendRequest(request) { response in
             switch response {
@@ -25,7 +30,7 @@ class LoginController: UIViewController {
                 print(meResponse)
                 let ud = NSUserDefaults.standardUserDefaults()
                 ud.setObject("token", forKey: meResponse.token)
-                // TODO push to next controller.
+                self.pushToTourSearchController()
                 break
             case .Failure(let error):
                 print(error)
@@ -34,16 +39,32 @@ class LoginController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let fbLogin : FacebookLogin = FacebookLogin()
-        fbLogin.loginCallback = { (name:String, email:String, photoURL:String) -> Void in
-            self.loginBreak(name, email: email, photoURL: photoURL)
-        }
-        self.view.addSubview(fbLogin.loginButton)
-        fbLogin.loginButton.center = self.view.center
-        fbLogin.delegate()
+    let fb : FacebookLogin = FacebookLogin()
+    
+    @IBOutlet weak var fbLoginView: UIImageView!
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = true
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBarHidden = false
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fb.loginCallback = {(name:String, email:String, photoURL:String) -> Void in
+            self.login(name, email: email, photoURL: photoURL)
+        }
+        fb.loginIfHasAccessToken()
+        let gesture = UITapGestureRecognizer(target:self, action: #selector(LoginController.didClickFBLoginView(_:)))
+        fbLoginView.addGestureRecognizer(gesture)
+    }
+    
+    func didClickFBLoginView(recognizer: UIGestureRecognizer) {
+        fb.initiate(self)
+    }
 }
 

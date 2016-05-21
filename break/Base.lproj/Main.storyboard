@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lvC-e1-7kt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lvC-e1-7kt">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -15,15 +15,15 @@
                         <viewControllerLayoutGuide type="bottom" id="zFu-By-NBg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WNe-qN-eFd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="319" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gzD-KC-X5D">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="319" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gzD-KC-X5D">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djB-4g-fNe" customClass="TourCreateButton" customModule="break" customModuleProvider="target">
-                                <rect key="frame" x="517" y="517" width="63" height="63"/>
+                                <rect key="frame" x="296" y="584" width="63" height="63"/>
                                 <color key="backgroundColor" red="0.23762747649999999" green="0.59187829489999999" blue="0.96681088209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="HnW-xr-Vgk"/>
@@ -51,7 +51,7 @@
                     <navigationItem key="navigationItem" id="VH0-yB-r8c">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="1Ec-lP-kI2">
-                            <rect key="frame" x="180" y="6" width="240" height="33"/>
+                            <rect key="frame" x="180" y="5.5" width="240" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_logo_head_break" translatesAutoresizingMaskIntoConstraints="NO" id="g6h-Om-Tmp">
@@ -100,7 +100,6 @@
         <!--View Controller-->
         <scene sceneID="H3a-oL-w5P">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hla-qE-RQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="MF4-do-m1d" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DCL-k0-H36"/>
@@ -124,6 +123,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Rk4-3Y-8yu"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hla-qE-RQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1350" y="1380"/>
         </scene>
@@ -136,11 +136,11 @@
                         <viewControllerLayoutGuide type="bottom" id="mIL-O0-QfJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EkA-oO-WOI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1hv-XJ-xrl">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -211,11 +211,11 @@
                         <viewControllerLayoutGuide type="bottom" id="48D-c9-uCn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xQc-C4-pQ9">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UdF-6o-srS">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UdF-6o-srS">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -242,12 +242,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="j45-Jx-65w" kind="relationship" relationship="rootViewController" id="m8l-6v-Mev"/>
+                        <segue destination="E7a-2L-B7a" kind="relationship" relationship="rootViewController" id="XuC-dO-0TO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqH-Bx-dnh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-216" y="-223"/>
+            <point key="canvasLocation" x="-1000" y="-223"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="boW-aI-7UP">
@@ -258,18 +258,38 @@
                         <viewControllerLayoutGuide type="bottom" id="80L-j6-3ji"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Kcb-9z-5gn">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_fb_chan_hamu" translatesAutoresizingMaskIntoConstraints="NO" id="gdW-qS-BKA">
+                                <rect key="frame" x="75" y="508" width="300" height="159"/>
+                            </imageView>
+                            <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btn_fb_login_break" translatesAutoresizingMaskIntoConstraints="NO" id="G2r-vm-oWV">
+                                <rect key="frame" x="57" y="310" width="260" height="48"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_logo_fb_break" translatesAutoresizingMaskIntoConstraints="NO" id="Hcj-E9-upG">
+                                <rect key="frame" x="110" y="234" width="154" height="36"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274510000002" green="0.93725490199999995" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="QhE-se-Jx0"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="fbLoginView" destination="G2r-vm-oWV" id="jkM-MG-NBI"/>
+                        <segue destination="j45-Jx-65w" kind="show" id="9DE-0C-qrB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QE0-qJ-eY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-206" y="484"/>
+            <point key="canvasLocation" x="-221.5" y="-224.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="btn_fb_login_break" width="255" height="40"/>
         <image name="icon_mypage_head_bresk" width="27" height="27"/>
+        <image name="image_fb_chan_hamu" width="300" height="158"/>
+        <image name="image_logo_fb_break" width="173" height="38"/>
         <image name="image_logo_head_break" width="86" height="18"/>
     </resources>
 </document>

@@ -11,28 +11,19 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-public class FacebookLogin: NSObject, FBSDKLoginButtonDelegate {
+public class FacebookLogin {
     
     public var loginCallback:((String, String, String)->Void)?
     
-    public let loginButton: FBSDKLoginButton = {
-        let button = FBSDKLoginButton()
-        button.readPermissions = ["public_profile", "email"]
-        return button
-    }()
+    public init() {}
     
-    public func delegate() {
-        loginButton.delegate = self
+    public func loginIfHasAccessToken() {
         if let _ = FBSDKAccessToken.currentAccessToken() {
-            fetchProfile()
+            login()
         }
     }
     
-    public func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        fetchProfile()
-    }
-    
-    public func fetchProfile() {
+    func login() {
         let parameters = ["fields": "email, name, picture.type(large)"]
         FBSDKGraphRequest(graphPath: "me", parameters: parameters).startWithCompletionHandler({ (connection, user, requestError) -> Void in
             if requestError != nil {
@@ -50,11 +41,25 @@ public class FacebookLogin: NSObject, FBSDKLoginButtonDelegate {
         })
     }
     
-    public func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+    public func initiate(fromViewController:UIViewController) {
+        let loginManager = FBSDKLoginManager()
+        loginManager.logInWithReadPermissions(["public_profile", "email"], fromViewController:fromViewController, handler: {(result:FBSDKLoginManagerLoginResult!, error:NSError!) -> Void in
+            if (error != nil) {
+                self.removeFacebookData()
+            } else if result.isCancelled {
+                self.removeFacebookData()
+            } else {
+                if result.grantedPermissions.contains("email") && result.grantedPermissions.contains("public_profile") {
+                    self.login()
+                }
+            }
+        })
     }
     
-    public func loginButtonWillLogin(loginButton: FBSDKLoginButton!) -> Bool {
-        return true
+    func removeFacebookData() {
+        let fbManager = FBSDKLoginManager()
+        fbManager.logOut()
+        FBSDKAccessToken.setCurrentAccessToken(nil)
     }
     
 }
