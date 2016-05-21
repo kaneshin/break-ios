@@ -24,7 +24,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djB-4g-fNe" customClass="TourCreateButton" customModule="break" customModuleProvider="target">
                                 <rect key="frame" x="517" y="517" width="63" height="63"/>
-                                <color key="backgroundColor" red="0.92549020049999997" green="0.36470589040000001" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.23762747649999999" green="0.59187829489999999" blue="0.96681088209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="HnW-xr-Vgk"/>
                                     <constraint firstAttribute="width" constant="63" id="Nba-Uf-cn1"/>
@@ -139,19 +139,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xzi-RC-Yjg">
-                                <rect key="frame" x="60" y="99" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="MF4-do-m1d" kind="show" id="pgt-dq-pxA"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1hv-XJ-xrl">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1hv-XJ-xrl" firstAttribute="leading" secondItem="EkA-oO-WOI" secondAttribute="leadingMargin" constant="-20" id="5aV-Rh-8iv"/>
+                            <constraint firstItem="mIL-O0-QfJ" firstAttribute="top" secondItem="1hv-XJ-xrl" secondAttribute="bottom" id="W8q-qx-IPP"/>
+                            <constraint firstItem="1hv-XJ-xrl" firstAttribute="top" secondItem="U1R-Ew-sgs" secondAttribute="bottom" constant="-64" id="afp-ld-evH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1hv-XJ-xrl" secondAttribute="trailing" constant="-20" id="nYG-OL-EwT"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="06C-Om-P0i">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="rZQ-j4-soH"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="rZQ-j4-soH">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="prepareForUnwind:" destination="jPR-Yg-zzV" id="5vH-8O-fDS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="1hv-XJ-xrl" id="3ZF-DZ-XzY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOq-rf-5Fl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,11 +198,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="zoi01" translatesAutoresizingMaskIntoConstraints="NO" id="WFp-If-RZg">
-                                <rect key="frame" x="0.0" y="64" width="419" height="337"/>
-                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UdF-6o-srS">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UdF-6o-srS" firstAttribute="top" secondItem="vCS-Lj-26f" secondAttribute="bottom" constant="-64" id="3Qq-ay-c06"/>
+                            <constraint firstItem="48D-c9-uCn" firstAttribute="top" secondItem="UdF-6o-srS" secondAttribute="bottom" id="4vD-G0-RFM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UdF-6o-srS" secondAttribute="trailing" constant="-20" id="59p-qu-woq"/>
+                            <constraint firstItem="UdF-6o-srS" firstAttribute="leading" secondItem="xQc-C4-pQ9" secondAttribute="leadingMargin" constant="-20" id="j5S-gR-VUG"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZ7-9u-QUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -236,6 +254,5 @@
     <resources>
         <image name="icon_mypage_head_bresk" width="27" height="27"/>
         <image name="image_logo_head_break" width="86" height="18"/>
-        <image name="zoi01" width="213" height="144"/>
     </resources>
 </document>

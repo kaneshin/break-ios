@@ -56,13 +56,30 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCellWithIdentifier("TourListCell", forIndexPath: indexPath)
         if let cell = cell as? TourListCell {
             let from: NSDate = NSDate().dateByAddingTimeInterval(-10000)
+            let imageURL: NSURL = NSURL(string: "http://placehold.it/\(rand()%1000)x\(rand()%1000)")!
+            let userImageURL: NSURL = NSURL(string: "https://avatars2.githubusercontent.com/u/1888355?v=3&s=400")!
+            cell.mainImageView.setImageWithURL(imageURL, placeholderImage: nil, completionHandler: { (image, error) in
+            })
+            cell.userImageView.setImageWithURL(userImageURL, placeholderImage: nil, completionHandler: { (image, error) in
+                cell.userImageView.transform = CGAffineTransformRotate(CGAffineTransformMakeScale(0.1, 0.1), 800.0)
+                UIView.animateWithDuration(1.2,
+                    delay: 0.2,
+                    usingSpringWithDamping: 0.2,
+                    initialSpringVelocity: 6.0,
+                    options: UIViewAnimationOptions.AllowUserInteraction,
+                    animations: {
+                        cell.userImageView.transform = CGAffineTransformIdentity
+                    }, completion: nil)
+            })
+            cell.titleLabel.text = "山下です。こんばんは。"
             cell.date(from, to: NSDate())
+            cell.likeCountLabel.text = "\(rand())"
         }
         return cell
     }
 
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+        return false
     }
 
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {

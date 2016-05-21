@@ -102,6 +102,7 @@
             <connections>
                 <outlet property="dateLabel" destination="8IV-gL-Unv" id="kuI-H3-sNb"/>
                 <outlet property="likeCountLabel" destination="yDm-cJ-NQB" id="QjD-wW-dXn"/>
+                <outlet property="likeImageView" destination="lun-fe-rrw" id="hh0-VY-eRU"/>
                 <outlet property="mainImageView" destination="2ca-U6-oAI" id="3Yy-Hu-6T8"/>
                 <outlet property="titleLabel" destination="6xH-2g-Fnr" id="vmo-Un-nwo"/>
                 <outlet property="userImageView" destination="5tD-PW-TL5" id="0u6-6Z-5YG"/>

@@ -11,7 +11,7 @@
 		794951C31CF0883500F5773A /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794951C21CF0883500F5773A /* DateTests.swift */; };
 		794951C41CF0886C00F5773A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794951C01CF086FD00F5773A /* Date.swift */; };
 		7952C3BF1CF035D900E75A43 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952C3BE1CF035D900E75A43 /* TableViewCell.swift */; };
-		7952C3C11CF0396300E75A43 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7952C3C01CF0396300E75A43 /* TableViewCell.xib */; };
+		7952C3C11CF0396300E75A43 /* TourListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7952C3C01CF0396300E75A43 /* TourListCell.xib */; };
 		7952C3E61CF03A7E00E75A43 /* API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C3E31CF03A7300E75A43 /* API.framework */; };
 		7952C3E71CF03A7E00E75A43 /* API.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C3E31CF03A7300E75A43 /* API.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7952C3EA1CF03A8C00E75A43 /* Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C3DC1CF03A4F00E75A43 /* Location.framework */; };
@@ -35,8 +35,11 @@
 		799EACBE1CF0271600AB9F9F /* TourSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EACBD1CF0271600AB9F9F /* TourSearchController.swift */; };
 		799EACC01CF0272600AB9F9F /* MypageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EACBF1CF0272600AB9F9F /* MypageController.swift */; };
 		799EACC21CF0275000AB9F9F /* TourCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EACC11CF0275000AB9F9F /* TourCreateController.swift */; };
+		79B9B4A41CF0A3060062111C /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79B9B4A31CF0A3060062111C /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		79B9B4A51CF0A3240062111C /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79B9B4A31CF0A3060062111C /* Kingfisher.framework */; };
+		79B9B4A71CF0B4C50062111C /* TourItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79B9B4A61CF0B4C50062111C /* TourItemCell.xib */; };
+		79B9B4A91CF0B55B0062111C /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9B4A81CF0B55B0062111C /* Image.swift */; };
 		EF7CCAFD1CF0888600E532A7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAFC1CF0888600E532A7 /* Realm.framework */; };
-		EF7CCAFF1CF0888D00E532A7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAFE1CF0888D00E532A7 /* RealmSwift.framework */; };
 		EF7CCB011CF0889D00E532A7 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB001CF0889D00E532A7 /* Himotoki.framework */; };
 		EF7CCB041CF0897200E532A7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB021CF0897200E532A7 /* FBSDKCoreKit.framework */; };
 		EF7CCB051CF0897200E532A7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB031CF0897200E532A7 /* FBSDKLoginKit.framework */; };
@@ -44,7 +47,6 @@
 		EF7CCB0E1CF08C3800E532A7 /* FBSDKCoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB021CF0897200E532A7 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EF7CCB0F1CF08C3800E532A7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB031CF0897200E532A7 /* FBSDKLoginKit.framework */; };
 		EF7CCB101CF08C3800E532A7 /* FBSDKLoginKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB031CF0897200E532A7 /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EF7CCB111CF08C3800E532A7 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB001CF0889D00E532A7 /* Himotoki.framework */; };
 		EF7CCB121CF08C3800E532A7 /* Himotoki.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB001CF0889D00E532A7 /* Himotoki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EF7CCB131CF08C3800E532A7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAFE1CF0888D00E532A7 /* RealmSwift.framework */; };
 		EF7CCB141CF08C3800E532A7 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAFE1CF0888D00E532A7 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -133,6 +135,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				79B9B4A41CF0A3060062111C /* Kingfisher.framework in Embed Frameworks */,
 				799BAC7A1CEF8CFE005F3F67 /* Result.framework in Embed Frameworks */,
 				EF7CCB0E1CF08C3800E532A7 /* FBSDKCoreKit.framework in Embed Frameworks */,
 				EF7CCB141CF08C3800E532A7 /* RealmSwift.framework in Embed Frameworks */,
@@ -155,7 +158,7 @@
 		794951C01CF086FD00F5773A /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		794951C21CF0883500F5773A /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		7952C3BE1CF035D900E75A43 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		7952C3C01CF0396300E75A43 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		7952C3C01CF0396300E75A43 /* TourListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TourListCell.xib; sourceTree = "<group>"; };
 		7952C3D71CF03A4E00E75A43 /* Location.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Location.xcodeproj; path = Location/Location.xcodeproj; sourceTree = "<group>"; };
 		7952C3DD1CF03A7300E75A43 /* API.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = API.xcodeproj; path = API/API.xcodeproj; sourceTree = "<group>"; };
 		7952C4031CF03C3B00E75A43 /* Auth.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Auth.xcodeproj; path = Auth/Auth.xcodeproj; sourceTree = "<group>"; };
@@ -176,6 +179,9 @@
 		799EACBD1CF0271600AB9F9F /* TourSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourSearchController.swift; sourceTree = "<group>"; };
 		799EACBF1CF0272600AB9F9F /* MypageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MypageController.swift; sourceTree = "<group>"; };
 		799EACC11CF0275000AB9F9F /* TourCreateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourCreateController.swift; sourceTree = "<group>"; };
+		79B9B4A31CF0A3060062111C /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		79B9B4A61CF0B4C50062111C /* TourItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TourItemCell.xib; sourceTree = "<group>"; };
+		79B9B4A81CF0B55B0062111C /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		EF7CCAFC1CF0888600E532A7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		EF7CCAFE1CF0888D00E532A7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		EF7CCB001CF0889D00E532A7 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
@@ -196,17 +202,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79B9B4A51CF0A3240062111C /* Kingfisher.framework in Frameworks */,
 				7952C3EA1CF03A8C00E75A43 /* Location.framework in Frameworks */,
 				EF7CCB0D1CF08C3800E532A7 /* FBSDKCoreKit.framework in Frameworks */,
 				799EACBA1CF025B400AB9F9F /* MapKit.framework in Frameworks */,
 				799BAC791CEF8CFE005F3F67 /* Result.framework in Frameworks */,
-				EF7CCB111CF08C3800E532A7 /* Himotoki.framework in Frameworks */,
 				799BAC771CEF8CFE005F3F67 /* APIKit.framework in Frameworks */,
 				EF7CCAFD1CF0888600E532A7 /* Realm.framework in Frameworks */,
 				EF7CCB041CF0897200E532A7 /* FBSDKCoreKit.framework in Frameworks */,
 				EF7CCB0F1CF08C3800E532A7 /* FBSDKLoginKit.framework in Frameworks */,
 				7952C40A1CF03C7F00E75A43 /* Auth.framework in Frameworks */,
-				EF7CCAFF1CF0888D00E532A7 /* RealmSwift.framework in Frameworks */,
 				EF7CCB131CF08C3800E532A7 /* RealmSwift.framework in Frameworks */,
 				EF7CCB151CF08C3800E532A7 /* Realm.framework in Frameworks */,
 				EF7CCB051CF0897200E532A7 /* FBSDKLoginKit.framework in Frameworks */,
@@ -333,7 +338,8 @@
 			isa = PBXGroup;
 			children = (
 				7952C3BE1CF035D900E75A43 /* TableViewCell.swift */,
-				7952C3C01CF0396300E75A43 /* TableViewCell.xib */,
+				7952C3C01CF0396300E75A43 /* TourListCell.xib */,
+				79B9B4A61CF0B4C50062111C /* TourItemCell.xib */,
 			);
 			path = Presentations;
 			sourceTree = "<group>";
@@ -341,6 +347,7 @@
 		799BAC7B1CEF8D03005F3F67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				79B9B4A31CF0A3060062111C /* Kingfisher.framework */,
 				EF7CCB021CF0897200E532A7 /* FBSDKCoreKit.framework */,
 				EF7CCB031CF0897200E532A7 /* FBSDKLoginKit.framework */,
 				EF7CCB001CF0889D00E532A7 /* Himotoki.framework */,
@@ -360,6 +367,7 @@
 				799EACB71CF01F9F00AB9F9F /* Button.swift */,
 				7952C45F1CF070C100E75A43 /* ImageView.swift */,
 				794951C01CF086FD00F5773A /* Date.swift */,
+				79B9B4A81CF0B55B0062111C /* Image.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -536,7 +544,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				799BAC431CEF80A1005F3F67 /* LaunchScreen.storyboard in Resources */,
-				7952C3C11CF0396300E75A43 /* TableViewCell.xib in Resources */,
+				79B9B4A71CF0B4C50062111C /* TourItemCell.xib in Resources */,
+				7952C3C11CF0396300E75A43 /* TourListCell.xib in Resources */,
 				799BAC421CEF80A1005F3F67 /* Assets.xcassets in Resources */,
 				799BAC441CEF80A1005F3F67 /* Main.storyboard in Resources */,
 			);
@@ -564,6 +573,7 @@
 				7952C4601CF070C100E75A43 /* ImageView.swift in Sources */,
 				799EACC21CF0275000AB9F9F /* TourCreateController.swift in Sources */,
 				799EACBE1CF0271600AB9F9F /* TourSearchController.swift in Sources */,
+				79B9B4A91CF0B55B0062111C /* Image.swift in Sources */,
 				7952C3BF1CF035D900E75A43 /* TableViewCell.swift in Sources */,
 				799EAC811CF0187D00AB9F9F /* NavigationController.swift in Sources */,
 				799EACB61CF01BC500AB9F9F /* Color.swift in Sources */,

@@ -22,15 +22,97 @@
 
 import UIKit
 
-class TourCreateController: UIViewController {
+class TourCreateController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBAction func unwindModal(segue: UIStoryboardSegue) {
-
+    enum Section: Int {
+        case List
+        case Item
+        case Unknown
+        var identifier: String {
+            switch self {
+            case .List:
+                return "TourListCell"
+            case .Item:
+                return "TourItemCell"
+            default:
+                return "Cell"
+            }
+        }
     }
-//        var tappedButton:UIButton = sender as UIButton
-//        tappedButton.setTitle("tapped", forState:UIControlState.Normal)
-//    }
-//    - (IBAction)unwindToTop:(UIStoryboardSegue *)segue
-//    {
-//    }
+
+    @IBOutlet weak var tableView: UITableView!
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.registerNib(TourListCell.nib, forCellReuseIdentifier: TourListCell.identifier)
+        tableView.registerNib(TourItemCell.nib, forCellReuseIdentifier: TourItemCell.identifier)
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+
+
+    // MARK: - Table View
+
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return Section.Unknown.rawValue
+    }
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let sec: Section = Section.init(rawValue: section)!
+        switch sec {
+        case .Item:
+            return 100
+        default:
+            return 1
+        }
+    }
+
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let sec: Section = Section.init(rawValue: indexPath.section)!
+        switch sec {
+        case .Item:
+            return TourItemCell.heightForRow
+        default:
+            return TourListCell.heightForRow
+        }
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = {
+            let sec: Section = Section.init(rawValue: indexPath.section)!
+            return tableView.dequeueReusableCellWithIdentifier(sec.identifier, forIndexPath: indexPath)
+        }()
+        if let cell = cell as? TourListCell {
+            cell.hideLikeView()
+            let from: NSDate = NSDate().dateByAddingTimeInterval(-10000)
+            let imageURL: NSURL = NSURL(string: "http://placehold.it/\(rand()%1000)x\(rand()%1000)")!
+            let userImageURL: NSURL = NSURL(string: "https://avatars2.githubusercontent.com/u/1888355?v=3&s=400")!
+            cell.mainImageView.setImageWithURL(imageURL, placeholderImage: nil, completionHandler: { (image, error) in
+            })
+            cell.userImageView.setImageWithURL(userImageURL, placeholderImage: nil, completionHandler: { (image, error) in
+            })
+            cell.titleLabel.text = "山下です。こんばんは。"
+            cell.date(from, to: NSDate())
+        }
+        return cell
+    }
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
+
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    }
+    
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
 }

@@ -24,23 +24,68 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
-    static let nib = UINib.init(nibName: "TableViewCell", bundle: nil)
-
 }
 
 class TourListCell: TableViewCell {
+
+    static let identifier: String = "TourListCell"
+    static let nib = UINib.init(nibName: identifier, bundle: nil)
+    static let heightForRow: CGFloat = 280.0
 
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var likeCountLabel: UILabel!
+    @IBOutlet weak var likeImageView: UIImageView!
 
-    static let identifier: String = "TourListCell"
-    static let heightForRow: CGFloat = 280.0
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.reset()
+    }
+
+    func reset() {
+        mainImageView.image = nil
+        userImageView.image = nil
+        titleLabel.text = ""
+        dateLabel.text = ""
+        likeCountLabel.text = ""
+    }
 
     func date(from: NSDate, to: NSDate) {
         self.dateLabel.text = from.string(.TourList, to: to)
     }
+
+    func hideLikeView() {
+        self.likeCountLabel.hidden = true
+        self.likeImageView.hidden = true
+    }
     
 }
+
+class TourItemCell: TableViewCell {
+
+    static let identifier: String = "TourItemCell"
+    static let nib = UINib.init(nibName: identifier, bundle: nil)
+    static let heightForRow: CGFloat = 108.0
+
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var lineImageView: UIImageView!
+    @IBOutlet weak var detailLabel: UILabel!
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.reset()
+    }
+
+    func reset() {
+        dateLabel.text = ""
+        detailLabel.text = ""
+    }
+
+}
+

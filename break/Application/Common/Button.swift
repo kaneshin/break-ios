@@ -75,6 +75,8 @@ class TourCreateButton: Button {
         self.backgroundColor = Color().breakBlueColor
     }
 
+
+
     override func drawRect(rect: CGRect) {
         let length: CGFloat = 10.0
         let center: CGPoint = CGPoint(x: rect.midX, y: rect.midY)

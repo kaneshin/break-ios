@@ -21,6 +21,33 @@
 // THE SOFTWARE.
 
 import UIKit
+import Kingfisher
+
+extension UIImageView {
+    func setImageWithURL(URL: NSURL) {
+        self.setImageWithURL(URL, placeholderImage: nil, completionHandler: nil)
+    }
+
+    func setImageWithURL(URL: NSURL, placeholderImage: UIImage?) {
+        self.setImageWithURL(URL, placeholderImage: placeholderImage, completionHandler: nil)
+    }
+
+    func setImageWithURL(URL: NSURL, placeholderImage: UIImage?, completionHandler: ((image: UIImage?, error: NSError?) -> ())?) {
+        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        let options: KingfisherOptionsInfo = [
+            // .ForceRefresh,
+            // .DownloadPriority(0.5),
+            .CallbackDispatchQueue(queue),
+            .Transition(ImageTransition.Fade(0.15))
+        ]
+        self.kf_setImageWithURL(URL, placeholderImage: placeholderImage, optionsInfo: options, progressBlock: nil) { (image, error, cacheType, imageURL) in
+            if let completion = completionHandler {
+                completion(image: image, error: error)
+            }
+        }
+    }
+
+}
 
 class ImageView: UIImageView {
 
