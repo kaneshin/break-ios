@@ -289,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				799BAC2E1CEF80A1005F3F67 /* AppDelegate.swift */,
+				79B9B4A11CF0912C0062111C /* Domains */,
 				799EACB41CF01BBD00AB9F9F /* Common */,
 				799BAC2F1CEF80A1005F3F67 /* Interfaces */,
 			);
@@ -361,6 +362,21 @@
 				794951C01CF086FD00F5773A /* Date.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		79B9B4A11CF0912C0062111C /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+				79B9B4A21CF0912D0062111C /* Entities */,
+			);
+			path = Domains;
+			sourceTree = "<group>";
+		};
+		79B9B4A21CF0912D0062111C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

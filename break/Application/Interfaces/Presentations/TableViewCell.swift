@@ -39,6 +39,8 @@ class TourListCell: TableViewCell {
     static let identifier: String = "TourListCell"
     static let heightForRow: CGFloat = 280.0
 
-    
+    func date(from: NSDate, to: NSDate) {
+        self.dateLabel.text = from.string(.TourList, to: to)
+    }
     
 }

@@ -52,4 +52,8 @@ extension NSDate {
         }
         return elms.joinWithSeparator(" - ")
     }
+
+    func string(layout: DateLayout, to: NSDate?) -> String {
+        return NSDate.string(layout, from: self, to: to)
+    }
 }

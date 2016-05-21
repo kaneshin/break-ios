@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="E7a-2L-B7a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lvC-e1-7kt">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -22,15 +22,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djB-4g-fNe" customClass="CircleButton" customModule="break" customModuleProvider="target">
-                                <rect key="frame" x="520" y="520" width="60" height="60"/>
-                                <color key="backgroundColor" red="0.23762747649999999" green="0.59187829489999999" blue="0.96681088209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djB-4g-fNe" customClass="TourCreateButton" customModule="break" customModuleProvider="target">
+                                <rect key="frame" x="517" y="517" width="63" height="63"/>
+                                <color key="backgroundColor" red="0.92549020049999997" green="0.36470589040000001" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="HnW-xr-Vgk"/>
-                                    <constraint firstAttribute="width" constant="60" id="Nba-Uf-cn1"/>
+                                    <constraint firstAttribute="height" constant="63" id="HnW-xr-Vgk"/>
+                                    <constraint firstAttribute="width" constant="63" id="Nba-Uf-cn1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="+">
+                                <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -67,7 +67,7 @@
                             </constraints>
                         </view>
                         <barButtonItem key="rightBarButtonItem" image="icon_mypage_head_bresk" style="plain" id="ZFX-zL-FJB">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="nde-2I-Khr" kind="show" id="AGR-dI-ceP"/>
                             </connections>

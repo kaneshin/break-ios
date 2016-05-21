@@ -22,7 +22,7 @@
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kento01" translatesAutoresizingMaskIntoConstraints="NO" id="5tD-PW-TL5" customClass="WhiteBorderCircleImageView" customModule="break" customModuleProvider="target">
-                        <rect key="frame" x="441" y="169" width="58" height="58"/>
+                        <rect key="frame" x="443" y="169" width="58" height="58"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="58" id="FXX-yw-DZW"/>
                             <constraint firstAttribute="width" constant="58" id="zTd-6F-DGo"/>
@@ -37,7 +37,7 @@
                                     <constraint firstAttribute="height" constant="17" id="Wef-do-F5g"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54i-Lv-5bG">
@@ -77,12 +77,22 @@
                             </stackView>
                         </subviews>
                     </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dc8-uO-BHQ">
+                        <rect key="frame" x="477" y="15" width="24" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="M9L-81-wbW"/>
+                            <constraint firstAttribute="height" constant="23" id="nh5-aA-wbp"/>
+                        </constraints>
+                        <state key="normal" image="icon_heart_search_fav"/>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="5tD-PW-TL5" secondAttribute="trailing" constant="9" id="6YT-uY-M76"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="5tD-PW-TL5" secondAttribute="trailing" constant="7" id="6YT-uY-M76"/>
                     <constraint firstAttribute="trailingMargin" secondItem="2ca-U6-oAI" secondAttribute="trailing" constant="-8" id="Gg0-kr-yy9"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Dc8-uO-BHQ" secondAttribute="trailing" constant="7" id="I7O-YC-aFv"/>
+                    <constraint firstItem="Dc8-uO-BHQ" firstAttribute="top" secondItem="H8j-b1-DQk" secondAttribute="topMargin" constant="7" id="IDA-4R-Eae"/>
                     <constraint firstItem="2ca-U6-oAI" firstAttribute="top" secondItem="H8j-b1-DQk" secondAttribute="topMargin" constant="-8" id="KdL-Cf-Zt2"/>
-                    <constraint firstItem="5tD-PW-TL5" firstAttribute="leading" secondItem="xOv-zt-gwz" secondAttribute="trailing" constant="16" id="OSr-bM-55Y"/>
+                    <constraint firstItem="5tD-PW-TL5" firstAttribute="leading" secondItem="xOv-zt-gwz" secondAttribute="trailing" constant="18" id="OSr-bM-55Y"/>
                     <constraint firstItem="xOv-zt-gwz" firstAttribute="leading" secondItem="H8j-b1-DQk" secondAttribute="leadingMargin" constant="7" id="aKb-yl-jPH"/>
                     <constraint firstItem="5tD-PW-TL5" firstAttribute="top" secondItem="2ca-U6-oAI" secondAttribute="bottom" constant="-31" id="fkx-GN-mFb"/>
                     <constraint firstItem="xOv-zt-gwz" firstAttribute="top" secondItem="2ca-U6-oAI" secondAttribute="bottom" constant="19" id="ggK-ug-Bij"/>
@@ -101,6 +111,7 @@
     </objects>
     <resources>
         <image name="icon_heart_search_break" width="12" height="12"/>
+        <image name="icon_heart_search_fav" width="24" height="23"/>
         <image name="icon_time_search_break" width="12" height="12"/>
         <image name="kento01" width="109" height="93"/>
         <image name="onomichi" width="1216" height="810"/>

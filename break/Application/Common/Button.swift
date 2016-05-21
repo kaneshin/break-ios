@@ -45,7 +45,7 @@ class Button: UIButton {
         layer.borderWidth = self.borderWidth
         layer.borderColor = self.borderColor?.CGColor
         layer.cornerRadius = self.cornerRadius
-        layer.masksToBounds = true
+        layer.masksToBounds = self.cornerRadius > 0
         layer.rasterizationScale = UIScreen.mainScreen().scale
         layer.shouldRasterize = true
     }
@@ -65,4 +65,31 @@ class CircleButton: Button {
         self.cornerRadius = self.bounds.height / 2
     }
 
+}
+
+class TourCreateButton: Button {
+
+    override func configureView() {
+        super.configureView()
+        self.cornerRadius = self.bounds.height / 2
+        self.backgroundColor = Color().breakBlueColor
+    }
+
+    override func drawRect(rect: CGRect) {
+        let length: CGFloat = 10.0
+        let center: CGPoint = CGPoint(x: rect.midX, y: rect.midY)
+
+        let ctx: CGContextRef = UIGraphicsGetCurrentContext()!;
+
+        CGContextSetStrokeColorWithColor(ctx, UIColor.whiteColor().CGColor)
+        CGContextSetLineWidth(ctx, 1.0);
+
+        CGContextMoveToPoint(ctx, center.x - length, center.y)
+        CGContextAddLineToPoint(ctx, center.x + length, center.y)
+
+        CGContextMoveToPoint(ctx, center.x, center.y - length)
+        CGContextAddLineToPoint(ctx, center.x, center.y + length)
+
+        CGContextStrokePath(ctx);
+    }
 }

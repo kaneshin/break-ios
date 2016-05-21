@@ -56,6 +56,27 @@ class ImageView: UIImageView {
 
 }
 
+enum ImageBorder {
+    case None
+    case White
+    var width: CGFloat {
+        switch self {
+        case .None:
+            return 0.0
+        case .White:
+            return 2.0
+        }
+    }
+    var color: UIColor {
+        switch self {
+        case .None:
+            return UIColor.clearColor()
+        case .White:
+            return UIColor.whiteColor()
+        }
+    }
+}
+
 class CircleImageView: ImageView {
 
     override func configureView() {
