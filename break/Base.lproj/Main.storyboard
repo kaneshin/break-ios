@@ -100,6 +100,7 @@
         <!--View Controller-->
         <scene sceneID="H3a-oL-w5P">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hla-qE-RQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="MF4-do-m1d" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DCL-k0-H36"/>
@@ -109,7 +110,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bG8-rp-cna">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bG8-rp-cna">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
                         </subviews>
@@ -123,11 +124,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="Rk4-3Y-8yu"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hla-qE-RQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1350" y="1380"/>
         </scene>
-        <!--Title-->
+        <!--Tour Create Controller-->
         <scene sceneID="PTM-pC-Bdm">
             <objects>
                 <viewController storyboardIdentifier="TourCreateController" id="jPR-Yg-zzV" customClass="TourCreateController" customModule="break" customModuleProvider="target" sceneMemberID="viewController">
@@ -152,7 +152,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="1hv-XJ-xrl" secondAttribute="trailing" constant="-20" id="nYG-OL-EwT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="06C-Om-P0i">
+                    <navigationItem key="navigationItem" id="06C-Om-P0i">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="rZQ-j4-soH">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -168,7 +168,7 @@
             </objects>
             <point key="canvasLocation" x="563" y="1380"/>
         </scene>
-        <!--Tour Detail Controller-->
+        <!--Title-->
         <scene sceneID="5sX-n6-4ql">
             <objects>
                 <viewController storyboardIdentifier="TourDetailController" id="c9U-qy-Pqf" customClass="TourDetailController" customModule="break" customModuleProvider="target" sceneMemberID="viewController">
@@ -179,14 +179,30 @@
                     <view key="view" contentMode="scaleToFill" id="c5x-ag-DwD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rdn-1X-qi9">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5pJ-fs-hbg" firstAttribute="top" secondItem="rdn-1X-qi9" secondAttribute="bottom" id="0fr-aA-yLd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rdn-1X-qi9" secondAttribute="trailing" constant="-20" id="7Bg-hR-ldk"/>
+                            <constraint firstItem="rdn-1X-qi9" firstAttribute="leading" secondItem="c5x-ag-DwD" secondAttribute="leadingMargin" constant="-20" id="NkG-4M-cLt"/>
+                            <constraint firstItem="rdn-1X-qi9" firstAttribute="top" secondItem="68d-T9-SrN" secondAttribute="bottom" constant="-20" id="eXV-ZJ-yQO"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="iXI-s6-Y1K"/>
+                    <connections>
+                        <outlet property="tableView" destination="rdn-1X-qi9" id="Tfz-yR-fBL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0S-Sb-CLX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1350" y="588"/>
         </scene>
-        <!--Mypage Controller-->
+        <!--Mypage-->
         <scene sceneID="Hzq-xN-fqf">
             <objects>
                 <viewController storyboardIdentifier="MypageController" id="nde-2I-Khr" customClass="MypageController" customModule="break" customModuleProvider="target" sceneMemberID="viewController">
@@ -211,6 +227,7 @@
                             <constraint firstItem="UdF-6o-srS" firstAttribute="leading" secondItem="xQc-C4-pQ9" secondAttribute="leadingMargin" constant="-20" id="j5S-gR-VUG"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Mypage" id="zvY-wx-Ey9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZ7-9u-QUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

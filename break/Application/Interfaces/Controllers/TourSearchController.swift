@@ -85,4 +85,8 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     }
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TourDetailController")
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 }
