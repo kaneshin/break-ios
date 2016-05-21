@@ -19,6 +19,8 @@
 		7952C4411CF061CF00E75A43 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C43E1CF061CE00E75A43 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7952C4421CF061CF00E75A43 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C43F1CF061CE00E75A43 /* RealmSwift.framework */; };
 		7952C4431CF061CF00E75A43 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C43F1CF061CE00E75A43 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7952C4601CF070C100E75A43 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952C45F1CF070C100E75A43 /* ImageView.swift */; };
+		7952C4621CF0742800E75A43 /* TourDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952C4611CF0742800E75A43 /* TourDetailController.swift */; };
 		799BAC401CEF80A1005F3F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799BAC2E1CEF80A1005F3F67 /* AppDelegate.swift */; };
 		799BAC421CEF80A1005F3F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799BAC3A1CEF80A1005F3F67 /* Assets.xcassets */; };
 		799BAC431CEF80A1005F3F67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799BAC3B1CEF80A1005F3F67 /* LaunchScreen.storyboard */; };
@@ -31,9 +33,9 @@
 		799EACB61CF01BC500AB9F9F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EACB51CF01BC500AB9F9F /* Color.swift */; };
 		799EACB81CF01F9F00AB9F9F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EACB71CF01F9F00AB9F9F /* Button.swift */; };
 		799EACBA1CF025B400AB9F9F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799EACB91CF025B400AB9F9F /* MapKit.framework */; };
-		799EACBE1CF0271600AB9F9F /* SearchTourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EACBD1CF0271600AB9F9F /* SearchTourController.swift */; };
+		799EACBE1CF0271600AB9F9F /* TourSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EACBD1CF0271600AB9F9F /* TourSearchController.swift */; };
 		799EACC01CF0272600AB9F9F /* MypageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EACBF1CF0272600AB9F9F /* MypageController.swift */; };
-		799EACC21CF0275000AB9F9F /* CreateTourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EACC11CF0275000AB9F9F /* CreateTourController.swift */; };
+		799EACC21CF0275000AB9F9F /* TourCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EACC11CF0275000AB9F9F /* TourCreateController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +132,8 @@
 		7952C4031CF03C3B00E75A43 /* Auth.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Auth.xcodeproj; path = Auth/Auth.xcodeproj; sourceTree = "<group>"; };
 		7952C43E1CF061CE00E75A43 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		7952C43F1CF061CE00E75A43 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		7952C45F1CF070C100E75A43 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		7952C4611CF0742800E75A43 /* TourDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourDetailController.swift; sourceTree = "<group>"; };
 		799BABEE1CEF7D05005F3F67 /* break.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = break.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		799BAC2E1CEF80A1005F3F67 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		799BAC3A1CEF80A1005F3F67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -142,9 +146,9 @@
 		799EACB51CF01BC500AB9F9F /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		799EACB71CF01F9F00AB9F9F /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		799EACB91CF025B400AB9F9F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		799EACBD1CF0271600AB9F9F /* SearchTourController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTourController.swift; sourceTree = "<group>"; };
+		799EACBD1CF0271600AB9F9F /* TourSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourSearchController.swift; sourceTree = "<group>"; };
 		799EACBF1CF0272600AB9F9F /* MypageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MypageController.swift; sourceTree = "<group>"; };
-		799EACC11CF0275000AB9F9F /* CreateTourController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTourController.swift; sourceTree = "<group>"; };
+		799EACC11CF0275000AB9F9F /* TourCreateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourCreateController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,9 +250,10 @@
 			isa = PBXGroup;
 			children = (
 				799EAC801CF0187D00AB9F9F /* NavigationController.swift */,
-				799EACBD1CF0271600AB9F9F /* SearchTourController.swift */,
 				799EACBF1CF0272600AB9F9F /* MypageController.swift */,
-				799EACC11CF0275000AB9F9F /* CreateTourController.swift */,
+				799EACBD1CF0271600AB9F9F /* TourSearchController.swift */,
+				799EACC11CF0275000AB9F9F /* TourCreateController.swift */,
+				7952C4611CF0742800E75A43 /* TourDetailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 			children = (
 				799EACB51CF01BC500AB9F9F /* Color.swift */,
 				799EACB71CF01F9F00AB9F9F /* Button.swift */,
+				7952C45F1CF070C100E75A43 /* ImageView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -433,9 +439,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7952C4621CF0742800E75A43 /* TourDetailController.swift in Sources */,
 				799BAC401CEF80A1005F3F67 /* AppDelegate.swift in Sources */,
-				799EACC21CF0275000AB9F9F /* CreateTourController.swift in Sources */,
-				799EACBE1CF0271600AB9F9F /* SearchTourController.swift in Sources */,
+				7952C4601CF070C100E75A43 /* ImageView.swift in Sources */,
+				799EACC21CF0275000AB9F9F /* TourCreateController.swift in Sources */,
+				799EACBE1CF0271600AB9F9F /* TourSearchController.swift in Sources */,
 				7952C3BF1CF035D900E75A43 /* TableViewCell.swift in Sources */,
 				799EAC811CF0187D00AB9F9F /* NavigationController.swift in Sources */,
 				799EACB61CF01BC500AB9F9F /* Color.swift in Sources */,

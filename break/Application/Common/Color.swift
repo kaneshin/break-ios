@@ -23,5 +23,5 @@
 import UIKit
 
 struct Color {
-    let navigationBarColor = UIColor(red: 0/255.0, green: 107/255.0, blue: 168/255.0, alpha: 1.0)
+    let navigationBarColor = UIColor.whiteColor()
 }

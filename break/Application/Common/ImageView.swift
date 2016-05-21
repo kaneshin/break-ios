@@ -1,4 +1,4 @@
-// TableViewCell.swift
+// Button.swift
 //
 // Copyright (c) 2016 kaneshin.co
 //
@@ -22,15 +22,45 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class ImageView: UIImageView {
 
-    static let nib = UINib.init(nibName: "TableViewCell", bundle: nil)
+    var cornerRadius: CGFloat = 0.0
+    var borderWidth: CGFloat = 0.0
+    var borderColor: UIColor?
+    var tappableOffset: CGFloat = 0.0
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.configureView()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.configureView()
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let layer = self.layer
+        layer.borderWidth = self.borderWidth
+        layer.borderColor = self.borderColor?.CGColor
+        layer.cornerRadius = self.cornerRadius
+        layer.masksToBounds = true
+        layer.rasterizationScale = UIScreen.mainScreen().scale
+        layer.shouldRasterize = true
+    }
+
+    func configureView() {
+        self.tappableOffset = 0.0
+    }
 
 }
 
-class TourListCell: TableViewCell {
+class CircleImageView: ImageView {
 
-    static let identifier: String = "TourListCell"
-
+    override func configureView() {
+        super.configureView()
+        self.cornerRadius = self.bounds.height / 2
+    }
     
 }

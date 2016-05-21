@@ -75,10 +75,14 @@ public class Tracker: NSObject, CLLocationManagerDelegate {
 
     public func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
         let coordinate = newLocation.coordinate
-        let loc: Location = Location()
-        loc.latitude = coordinate.latitude
-        loc.longitude = coordinate.longitude
-        loc.speed = Double(newLocation.speed)
+        let realm = try! Realm()
+        try! realm.write {
+            let loc: Location = Location()
+            loc.latitude = coordinate.latitude
+            loc.longitude = coordinate.longitude
+            loc.speed = Double(newLocation.speed)
+            realm.add(loc)
+        }
     }
 
 }
