@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		794951B61CF0869900F5773A /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794951B51CF0869900F5773A /* Tests.swift */; };
 		794951C11CF086FD00F5773A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794951C01CF086FD00F5773A /* Date.swift */; };
 		794951C31CF0883500F5773A /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794951C21CF0883500F5773A /* DateTests.swift */; };
 		794951C41CF0886C00F5773A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794951C01CF086FD00F5773A /* Date.swift */; };
@@ -152,7 +151,6 @@
 
 /* Begin PBXFileReference section */
 		794951B31CF0869900F5773A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		794951B51CF0869900F5773A /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		794951B71CF0869900F5773A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		794951C01CF086FD00F5773A /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		794951C21CF0883500F5773A /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 		794951B41CF0869900F5773A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				794951B51CF0869900F5773A /* Tests.swift */,
 				794951B71CF0869900F5773A /* Info.plist */,
 				794951C21CF0883500F5773A /* DateTests.swift */,
 			);
@@ -537,7 +534,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				794951C41CF0886C00F5773A /* Date.swift in Sources */,
-				794951B61CF0869900F5773A /* Tests.swift in Sources */,
 				794951C31CF0883500F5773A /* DateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -757,6 +753,7 @@
 				794951BB1CF0869900F5773A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		799BABE91CEF7D05005F3F67 /* Build configuration list for PBXProject "break" */ = {
 			isa = XCConfigurationList;
