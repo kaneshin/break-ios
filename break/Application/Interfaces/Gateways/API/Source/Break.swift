@@ -75,6 +75,7 @@ public struct LoginMeRequest: BreakRequestType {
     }
     
     public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) -> Response? {
+        print(object)
         return try? decodeValue(object["instance"] as! [String:AnyObject])
     }
 }

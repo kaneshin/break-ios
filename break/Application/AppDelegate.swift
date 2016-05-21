@@ -30,9 +30,9 @@ import Location
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-        
+    
     let facebook: FacebookApplication = FacebookApplication()
-
+    
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         return facebook.application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }

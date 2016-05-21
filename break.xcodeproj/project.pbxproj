@@ -15,10 +15,6 @@
 		7952C3EB1CF03A8C00E75A43 /* Location.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C3DC1CF03A4F00E75A43 /* Location.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7952C40A1CF03C7F00E75A43 /* Auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C4081CF03C3D00E75A43 /* Auth.framework */; };
 		7952C40B1CF03C7F00E75A43 /* Auth.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C4081CF03C3D00E75A43 /* Auth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7952C4401CF061CF00E75A43 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C43E1CF061CE00E75A43 /* Realm.framework */; };
-		7952C4411CF061CF00E75A43 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C43E1CF061CE00E75A43 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7952C4421CF061CF00E75A43 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C43F1CF061CE00E75A43 /* RealmSwift.framework */; };
-		7952C4431CF061CF00E75A43 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7952C43F1CF061CE00E75A43 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7952C4601CF070C100E75A43 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952C45F1CF070C100E75A43 /* ImageView.swift */; };
 		7952C4621CF0742800E75A43 /* TourDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952C4611CF0742800E75A43 /* TourDetailController.swift */; };
 		799BAC401CEF80A1005F3F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799BAC2E1CEF80A1005F3F67 /* AppDelegate.swift */; };
@@ -36,6 +32,22 @@
 		799EACBE1CF0271600AB9F9F /* TourSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EACBD1CF0271600AB9F9F /* TourSearchController.swift */; };
 		799EACC01CF0272600AB9F9F /* MypageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EACBF1CF0272600AB9F9F /* MypageController.swift */; };
 		799EACC21CF0275000AB9F9F /* TourCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EACC11CF0275000AB9F9F /* TourCreateController.swift */; };
+		EF7CCAFD1CF0888600E532A7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAFC1CF0888600E532A7 /* Realm.framework */; };
+		EF7CCAFF1CF0888D00E532A7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAFE1CF0888D00E532A7 /* RealmSwift.framework */; };
+		EF7CCB011CF0889D00E532A7 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB001CF0889D00E532A7 /* Himotoki.framework */; };
+		EF7CCB041CF0897200E532A7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB021CF0897200E532A7 /* FBSDKCoreKit.framework */; };
+		EF7CCB051CF0897200E532A7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB031CF0897200E532A7 /* FBSDKLoginKit.framework */; };
+		EF7CCB0D1CF08C3800E532A7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB021CF0897200E532A7 /* FBSDKCoreKit.framework */; };
+		EF7CCB0E1CF08C3800E532A7 /* FBSDKCoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB021CF0897200E532A7 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EF7CCB0F1CF08C3800E532A7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB031CF0897200E532A7 /* FBSDKLoginKit.framework */; };
+		EF7CCB101CF08C3800E532A7 /* FBSDKLoginKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB031CF0897200E532A7 /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EF7CCB111CF08C3800E532A7 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB001CF0889D00E532A7 /* Himotoki.framework */; };
+		EF7CCB121CF08C3800E532A7 /* Himotoki.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB001CF0889D00E532A7 /* Himotoki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EF7CCB131CF08C3800E532A7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAFE1CF0888D00E532A7 /* RealmSwift.framework */; };
+		EF7CCB141CF08C3800E532A7 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAFE1CF0888D00E532A7 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EF7CCB151CF08C3800E532A7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAFC1CF0888600E532A7 /* Realm.framework */; };
+		EF7CCB161CF08C3800E532A7 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAFC1CF0888600E532A7 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EF7CCB1D1CF08CB300E532A7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CCB1C1CF08CB300E532A7 /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,11 +123,14 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7952C4411CF061CF00E75A43 /* Realm.framework in Embed Frameworks */,
 				799BAC7A1CEF8CFE005F3F67 /* Result.framework in Embed Frameworks */,
-				7952C4431CF061CF00E75A43 /* RealmSwift.framework in Embed Frameworks */,
+				EF7CCB0E1CF08C3800E532A7 /* FBSDKCoreKit.framework in Embed Frameworks */,
+				EF7CCB141CF08C3800E532A7 /* RealmSwift.framework in Embed Frameworks */,
+				EF7CCB121CF08C3800E532A7 /* Himotoki.framework in Embed Frameworks */,
+				EF7CCB161CF08C3800E532A7 /* Realm.framework in Embed Frameworks */,
 				7952C40B1CF03C7F00E75A43 /* Auth.framework in Embed Frameworks */,
 				7952C3E71CF03A7E00E75A43 /* API.framework in Embed Frameworks */,
+				EF7CCB101CF08C3800E532A7 /* FBSDKLoginKit.framework in Embed Frameworks */,
 				799BAC781CEF8CFE005F3F67 /* APIKit.framework in Embed Frameworks */,
 				7952C3EB1CF03A8C00E75A43 /* Location.framework in Embed Frameworks */,
 			);
@@ -130,8 +145,6 @@
 		7952C3D71CF03A4E00E75A43 /* Location.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Location.xcodeproj; path = Location/Location.xcodeproj; sourceTree = "<group>"; };
 		7952C3DD1CF03A7300E75A43 /* API.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = API.xcodeproj; path = API/API.xcodeproj; sourceTree = "<group>"; };
 		7952C4031CF03C3B00E75A43 /* Auth.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Auth.xcodeproj; path = Auth/Auth.xcodeproj; sourceTree = "<group>"; };
-		7952C43E1CF061CE00E75A43 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		7952C43F1CF061CE00E75A43 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		7952C45F1CF070C100E75A43 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		7952C4611CF0742800E75A43 /* TourDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourDetailController.swift; sourceTree = "<group>"; };
 		799BABEE1CEF7D05005F3F67 /* break.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = break.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +162,12 @@
 		799EACBD1CF0271600AB9F9F /* TourSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourSearchController.swift; sourceTree = "<group>"; };
 		799EACBF1CF0272600AB9F9F /* MypageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MypageController.swift; sourceTree = "<group>"; };
 		799EACC11CF0275000AB9F9F /* TourCreateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourCreateController.swift; sourceTree = "<group>"; };
+		EF7CCAFC1CF0888600E532A7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		EF7CCAFE1CF0888D00E532A7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		EF7CCB001CF0889D00E532A7 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
+		EF7CCB021CF0897200E532A7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = break/Application/Interfaces/Gateways/Auth/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		EF7CCB031CF0897200E532A7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = break/Application/Interfaces/Gateways/Auth/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		EF7CCB1C1CF08CB300E532A7 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,13 +176,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				7952C3EA1CF03A8C00E75A43 /* Location.framework in Frameworks */,
+				EF7CCB0D1CF08C3800E532A7 /* FBSDKCoreKit.framework in Frameworks */,
 				799EACBA1CF025B400AB9F9F /* MapKit.framework in Frameworks */,
 				799BAC791CEF8CFE005F3F67 /* Result.framework in Frameworks */,
+				EF7CCB111CF08C3800E532A7 /* Himotoki.framework in Frameworks */,
 				799BAC771CEF8CFE005F3F67 /* APIKit.framework in Frameworks */,
-				7952C4401CF061CF00E75A43 /* Realm.framework in Frameworks */,
+				EF7CCAFD1CF0888600E532A7 /* Realm.framework in Frameworks */,
+				EF7CCB041CF0897200E532A7 /* FBSDKCoreKit.framework in Frameworks */,
+				EF7CCB0F1CF08C3800E532A7 /* FBSDKLoginKit.framework in Frameworks */,
 				7952C40A1CF03C7F00E75A43 /* Auth.framework in Frameworks */,
-				7952C4421CF061CF00E75A43 /* RealmSwift.framework in Frameworks */,
+				EF7CCAFF1CF0888D00E532A7 /* RealmSwift.framework in Frameworks */,
+				EF7CCB131CF08C3800E532A7 /* RealmSwift.framework in Frameworks */,
+				EF7CCB151CF08C3800E532A7 /* Realm.framework in Frameworks */,
+				EF7CCB051CF0897200E532A7 /* FBSDKLoginKit.framework in Frameworks */,
 				7952C3E61CF03A7E00E75A43 /* API.framework in Frameworks */,
+				EF7CCB011CF0889D00E532A7 /* Himotoki.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +281,7 @@
 				799EACBD1CF0271600AB9F9F /* TourSearchController.swift */,
 				799EACC11CF0275000AB9F9F /* TourCreateController.swift */,
 				7952C4611CF0742800E75A43 /* TourDetailController.swift */,
+				EF7CCB1C1CF08CB300E532A7 /* LoginController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -280,8 +308,11 @@
 		799BAC7B1CEF8D03005F3F67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7952C43E1CF061CE00E75A43 /* Realm.framework */,
-				7952C43F1CF061CE00E75A43 /* RealmSwift.framework */,
+				EF7CCB021CF0897200E532A7 /* FBSDKCoreKit.framework */,
+				EF7CCB031CF0897200E532A7 /* FBSDKLoginKit.framework */,
+				EF7CCB001CF0889D00E532A7 /* Himotoki.framework */,
+				EF7CCAFE1CF0888D00E532A7 /* RealmSwift.framework */,
+				EF7CCAFC1CF0888600E532A7 /* Realm.framework */,
 				799EACB91CF025B400AB9F9F /* MapKit.framework */,
 				799BAC751CEF8CFE005F3F67 /* APIKit.framework */,
 				799BAC761CEF8CFE005F3F67 /* Result.framework */,
@@ -439,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF7CCB1D1CF08CB300E532A7 /* LoginController.swift in Sources */,
 				7952C4621CF0742800E75A43 /* TourDetailController.swift in Sources */,
 				799BAC401CEF80A1005F3F67 /* AppDelegate.swift in Sources */,
 				7952C4601CF070C100E75A43 /* ImageView.swift in Sources */,
@@ -583,6 +615,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/break/Application/Interfaces/Gateways/Auth",
 				);
 				INFOPLIST_FILE = break/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -599,6 +632,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/break/Application/Interfaces/Gateways/Auth",
 				);
 				INFOPLIST_FILE = break/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

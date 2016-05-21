@@ -45,6 +45,7 @@ public class FacebookLogin: NSObject, FBSDKLoginButtonDelegate {
             if let picture = user["picture"] as? NSDictionary, data = picture["data"] as? NSDictionary, url = data["url"] as? String {
                 pictureURL = url
             }
+            print(user)
             self.loginCallback!(name!, email!, pictureURL)
         })
     }
