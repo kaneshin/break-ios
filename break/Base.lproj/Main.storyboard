@@ -100,7 +100,6 @@
         <!--View Controller-->
         <scene sceneID="H3a-oL-w5P">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hla-qE-RQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="MF4-do-m1d" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DCL-k0-H36"/>
@@ -124,6 +123,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Rk4-3Y-8yu"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hla-qE-RQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1350" y="1380"/>
         </scene>

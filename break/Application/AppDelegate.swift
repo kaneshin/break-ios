@@ -39,8 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         facebook.application(application, didFinishLaunchingWithOptions: launchOptions)
-        let tracker = Location.Tracker()
-        tracker.startUpdatingLocation()
         return true
     }
 

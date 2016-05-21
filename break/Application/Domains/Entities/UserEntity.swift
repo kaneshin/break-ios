@@ -23,12 +23,45 @@
 import Foundation
 import RealmSwift
 
+class MeEntity {
+
+    let defaults = NSUserDefaults.standardUserDefaults()
+
+    var token: String {
+        set {
+            defaults.setObject(newValue, forKey: "me.token")
+        }
+        get {
+            if let token = defaults.objectForKey("me.token") as? String {
+                return token
+            }
+            return ""
+        }
+    }
+
+    var id: Int {
+        set {
+            defaults.setObject(newValue, forKey: "me.id")
+        }
+        get {
+            if let id = defaults.objectForKey("me.id") as? Int {
+                return id
+            }
+            return 0
+        }
+    }
+
+    func save() -> Bool {
+        return defaults.synchronize()
+    }
+}
+
 class UserEntity: Object {
     dynamic var id: Int = 0
     dynamic var name: String = ""
     dynamic var email: String = ""
     dynamic var photoURL: String = ""
     dynamic var activeStatus: Bool = false
-    dynamic var token: String = ""
+    // dynamic var token: String = ""
     dynamic var dynamic: NSDate = NSDate()
 }
