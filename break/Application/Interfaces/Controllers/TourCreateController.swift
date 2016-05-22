@@ -21,8 +21,13 @@
 // THE SOFTWARE.
 
 import UIKit
+import Location
+import API
+import APIKit
 
 class TourCreateController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    let tracker: Tracker = Tracker()
 
     enum Section: Int {
         case List
@@ -52,6 +57,42 @@ class TourCreateController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.registerNib(TourItemCell.nib, forCellReuseIdentifier: TourItemCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
+
+        // tracker.stopUpdatingLocation()
+        let me = MeEntity()
+        let now = NSDate().timeIntervalSince1970
+        let records: [Location] = tracker.find(me.lastRecordTime, to: now, limit: 5)
+
+        var logs: [SpotLog] = []
+        for record in records {
+            let log: SpotLog = SpotLog(t: Int(record.recordTime), lat: record.latitude, lng: record.longitude)
+            logs.append(log)
+        }
+
+        let request: CreateSpotRequest = CreateSpotRequest(spotLogs: logs)
+        Session.sendRequest(request) { response in
+            switch response {
+            case .Success( _):
+//                me.lastRecordTime = now
+//                me.save()
+                var req: GetSpotRequest = GetSpotRequest()
+                req.setVisitRange(Int(me.lastRecordTime), endVisitTime: Int(now))
+                Session.sendRequest(req) { response in
+                    switch response {
+                    case .Success(let response):
+                        print(response)
+                        break
+                    case .Failure(let error):
+                        print(error)
+                        break
+                    }
+                }
+                break
+            case .Failure(let error):
+                print(error)
+                break
+            }
+        }
     }
 
 

@@ -30,6 +30,7 @@ class MeEntity {
     var token: String {
         set {
             defaults.setObject(newValue, forKey: "me.token")
+            defaults.setObject(newValue, forKey: "token")
         }
         get {
             if let token = defaults.objectForKey("me.token") as? String {
@@ -48,6 +49,18 @@ class MeEntity {
                 return id
             }
             return 0
+        }
+    }
+
+    var lastRecordTime: NSTimeInterval {
+        set {
+            defaults.setObject(newValue, forKey: "me.last_record_time")
+        }
+        get {
+            if let recordTime = defaults.objectForKey("me.last_record_time") as? NSTimeInterval {
+                return recordTime
+            }
+            return 0.0
         }
     }
 

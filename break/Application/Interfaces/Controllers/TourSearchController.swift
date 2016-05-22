@@ -26,7 +26,7 @@ import Location
 class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    let tracker = Location.Tracker()
+    let tracker: Tracker = Tracker()
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
