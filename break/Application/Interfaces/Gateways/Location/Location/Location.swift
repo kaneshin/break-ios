@@ -104,4 +104,8 @@ public class Tracker: NSObject, CLLocationManagerDelegate {
         return array
     }
 
+    public func findLatest() -> Location? {
+        let realm = try! Realm()
+        return realm.objects(Location).sorted("recordTime", ascending: false).first
+    }
 }
