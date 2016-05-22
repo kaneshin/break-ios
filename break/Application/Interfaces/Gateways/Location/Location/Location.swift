@@ -24,11 +24,11 @@ import Foundation
 import CoreLocation
 import RealmSwift
 
-class Location: Object {
-    dynamic var latitude: Double = 0.0
-    dynamic var longitude: Double = 0.0
-    dynamic var speed: Double = 0.0
-    dynamic var recordTime: Double = NSDate().timeIntervalSince1970
+public class Location: Object {
+    public dynamic var latitude: Double = 0.0
+    public dynamic var longitude: Double = 0.0
+    public dynamic var speed: Double = 0.0
+    public dynamic var recordTime: Double = NSDate().timeIntervalSince1970
 }
 
 public class Tracker: NSObject, CLLocationManagerDelegate {
@@ -83,6 +83,25 @@ public class Tracker: NSObject, CLLocationManagerDelegate {
             loc.speed = Double(newLocation.speed)
             realm.add(loc)
         }
+    }
+
+    public func find(from: Double, to: Double, limit: Int) -> [Location] {
+        let realm = try! Realm()
+        let results = realm.objects(Location).filter("%f < recordTime AND recordTime < %f", from, to)
+        let count = results.count
+        if count < limit {
+            return Array(results)
+        }
+        let p = count / limit
+        var array: [Location] = []
+        var i = 0
+        for result in results {
+            if i % p == 0 {
+                array.append(result)
+            }
+            i += 1
+        }
+        return array
     }
 
 }
