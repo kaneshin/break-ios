@@ -31,7 +31,11 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var tableView: UITableView!
     let tracker: Tracker = Tracker()
-    var tours: [TourResponse] = []
+    var tours: [TourResponse] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -51,9 +55,6 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.presentViewController(controller, animated: true, completion: nil)
             })
         }
-
-        let tour: TourResponse = Sample().TourResponse(1)
-        self.tours = [tour]
 
         return
         guard let loc = tracker.findLatest() else {
@@ -79,6 +80,8 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
         self.navigationItem.hidesBackButton = true
         let me = MeEntity()
         if me.token != "" {
+            let tour: TourResponse = Sample().TourResponse(1)
+            self.tours = [tour]
             tracker.startUpdatingLocation()
         }
     }

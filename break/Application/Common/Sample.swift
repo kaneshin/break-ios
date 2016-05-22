@@ -47,6 +47,12 @@ class Sample {
             udat["name"] = user.name
             udat["photo_url"] = user.photoURL
             dat["user"] = udat
+        } else {
+            var udat: [String: AnyObject] = [:]
+            udat["id"] = 1
+            udat["name"] = "kaneshin"
+            udat["photo_url"] = "https://avatars3.githubusercontent.com/u/936972?v=3&s=460"
+            dat["user"] = udat
         }
         return try! decodeValue(dat)
     }

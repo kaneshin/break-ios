@@ -36,7 +36,7 @@ class MypageController: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
         let realm = try! Realm()
         let me = MeEntity()
-        if let user = realm.objects(UserEntity).filter("id = %d", me.id).last {
+        if let user = realm.objects(UserEntity).filter("id = %d", me.id).first {
             if let url = NSURL(string: user.photoURL) {
                 print(url)
                 self.imageView.setImageWithURL(url)
@@ -49,7 +49,7 @@ class MypageController: UIViewController, UITableViewDelegate, UITableViewDataSo
         tableView.dataSource = self
 
         let tour: TourResponse = Sample().TourResponse(1)
-        for i in 0...10 {
+        for _ in 0...10 {
             self.tours.append(tour)
         }
 

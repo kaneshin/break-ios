@@ -30,7 +30,7 @@ class LoginController: UIViewController, UIScrollViewDelegate {
             case .Success(let meResponse):
                 let realm = try! Realm()
                 let id = meResponse.id
-                if let user = realm.objects(UserEntity).filter("id = \(id)").first {
+                if let user = realm.objects(UserEntity).filter("id = %d", id).first {
                     try! realm.write {
                         user.name = meResponse.name
                         user.photoURL = meResponse.photoURL.absoluteString
