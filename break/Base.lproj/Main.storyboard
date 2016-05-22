@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lvC-e1-7kt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lvC-e1-7kt">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="319" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gzD-KC-X5D">
-                                <rect key="frame" x="-4" y="0.0" width="383" height="600"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="319" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gzD-KC-X5D">
+                                <rect key="frame" x="-8" y="0.0" width="387" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djB-4g-fNe" customClass="TourCreateButton" customModule="break" customModuleProvider="target">
@@ -41,7 +41,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="gzD-KC-X5D" secondAttribute="trailing" constant="-20" id="7Rm-aP-UDD"/>
-                            <constraint firstItem="gzD-KC-X5D" firstAttribute="leading" secondItem="WNe-qN-eFd" secondAttribute="leadingMargin" constant="-20" id="I1O-x5-0vq"/>
+                            <constraint firstItem="gzD-KC-X5D" firstAttribute="leading" secondItem="WNe-qN-eFd" secondAttribute="leadingMargin" constant="-24" id="I1O-x5-0vq"/>
                             <constraint firstItem="gzD-KC-X5D" firstAttribute="top" secondItem="mml-qQ-BVM" secondAttribute="bottom" constant="-64" id="JJQ-Fv-ql6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="djB-4g-fNe" secondAttribute="trailing" id="Kxh-BU-h1O"/>
                             <constraint firstItem="zFu-By-NBg" firstAttribute="top" secondItem="djB-4g-fNe" secondAttribute="bottom" constant="20" id="XLO-3V-m6I"/>
@@ -51,7 +51,7 @@
                     <navigationItem key="navigationItem" id="VH0-yB-r8c">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="1Ec-lP-kI2">
-                            <rect key="frame" x="180" y="5.5" width="240" height="33"/>
+                            <rect key="frame" x="68" y="6" width="240" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_logo_head_break" translatesAutoresizingMaskIntoConstraints="NO" id="g6h-Om-Tmp">
@@ -214,8 +214,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UdF-6o-srS">
-                                <rect key="frame" x="-4" y="0.0" width="383" height="600"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UdF-6o-srS">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -261,17 +261,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_fb_chan_hamu" translatesAutoresizingMaskIntoConstraints="NO" id="gdW-qS-BKA">
-                                <rect key="frame" x="75" y="508" width="300" height="159"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_logo_fb_break" translatesAutoresizingMaskIntoConstraints="NO" id="Hcj-E9-upG">
+                                <rect key="frame" x="93" y="224" width="189" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0tK-j9-OyC"/>
+                                    <constraint firstAttribute="width" constant="189" id="fUJ-Om-aE4"/>
+                                </constraints>
                             </imageView>
-                            <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btn_fb_login_break" translatesAutoresizingMaskIntoConstraints="NO" id="G2r-vm-oWV">
-                                <rect key="frame" x="57" y="310" width="260" height="48"/>
+                            <imageView tag="1" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_fb_login_break" translatesAutoresizingMaskIntoConstraints="NO" id="G2r-vm-oWV">
+                                <rect key="frame" x="60" y="314" width="255" height="40"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_logo_fb_break" translatesAutoresizingMaskIntoConstraints="NO" id="Hcj-E9-upG">
-                                <rect key="frame" x="110" y="234" width="154" height="36"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_fb_chan_hamu" translatesAutoresizingMaskIntoConstraints="NO" id="gdW-qS-BKA">
+                                <rect key="frame" x="79" y="508" width="300" height="159"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="9Dz-Ud-g90"/>
+                                    <constraint firstAttribute="height" constant="159" id="Qsi-cA-HWk"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274510000002" green="0.93725490199999995" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="G2r-vm-oWV" firstAttribute="top" secondItem="Hcj-E9-upG" secondAttribute="bottom" constant="40" id="VbG-Eb-3gn"/>
+                            <constraint firstItem="G2r-vm-oWV" firstAttribute="centerY" secondItem="Kcb-9z-5gn" secondAttribute="centerY" id="g98-x6-98M"/>
+                            <constraint firstItem="Hcj-E9-upG" firstAttribute="centerX" secondItem="G2r-vm-oWV" secondAttribute="centerX" id="hUk-s1-itT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gdW-qS-BKA" secondAttribute="trailing" constant="-20" id="hZ8-j1-C5k"/>
+                            <constraint firstItem="G2r-vm-oWV" firstAttribute="centerX" secondItem="Kcb-9z-5gn" secondAttribute="centerX" id="heq-Sa-Vcf"/>
+                            <constraint firstItem="80L-j6-3ji" firstAttribute="top" secondItem="gdW-qS-BKA" secondAttribute="bottom" id="wqa-Oq-UUR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QhE-se-Jx0"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

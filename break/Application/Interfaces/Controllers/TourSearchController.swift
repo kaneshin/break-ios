@@ -22,6 +22,8 @@
 
 import UIKit
 import Location
+import API
+import APIKit
 
 class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -46,6 +48,30 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.presentViewController(controller, animated: true, completion: nil)
             })
         }
+
+//        var request: GetTourRequest = GetTourRequest()
+//        request.setLatLng(<#T##lat: Double##Double#>, lng: <#T##Double#>)
+//        Session.sendRequest(request) { response in
+//            switch response {
+//            case .Success( _):
+//                var req: GetSpotRequest = GetSpotRequest()
+//                req.setVisitRange(Int(now) - 10, endVisitTime: Int(now) + 10)
+//                Session.sendRequest(req) { response in
+//                    switch response {
+//                    case .Success(let response):
+//                        print(response)
+//                        break
+//                    case .Failure(let error):
+//                        print(error)
+//                        break
+//                    }
+//                }
+//                break
+//            case .Failure(let error):
+//                print(error)
+//                break
+//            }
+//        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -79,21 +105,19 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
             let userImageURL: NSURL = NSURL(string: "https://avatars2.githubusercontent.com/u/1888355?v=3&s=400")!
             cell.mainImageView.setImageWithURL(imageURL)
             cell.userImageView.setImageWithURL(userImageURL, placeholderImage: nil, completionHandler: { (image, error) in
-                /*
-                cell.userImageView.transform = CGAffineTransformRotate(CGAffineTransformMakeScale(0.1, 0.1), 800.0)
-                UIView.animateWithDuration(1.2,
-                    delay: 0.2,
-                    usingSpringWithDamping: 0.2,
-                    initialSpringVelocity: 6.0,
-                    options: UIViewAnimationOptions.AllowUserInteraction,
-                    animations: {
-                        cell.userImageView.transform = CGAffineTransformIdentity
-                    }, completion: nil)
-                 */
+//                cell.userImageView.transform = CGAffineTransformRotate(CGAffineTransformMakeScale(0.1, 0.1), 800.0)
+//                UIView.animateWithDuration(2.0,
+//                    delay: 0.2,
+//                    usingSpringWithDamping: 0.2,
+//                    initialSpringVelocity: 11.0,
+//                    options: UIViewAnimationOptions.AllowUserInteraction,
+//                    animations: {
+//                        cell.userImageView.transform = CGAffineTransformIdentity
+//                    }, completion: nil)
             })
-            cell.titleTextField.text = "山下です。こんばんは。"
+            cell.titleTextField.text = "Awesome Trip"
             cell.date(from, to: NSDate())
-            cell.likeCountLabel.text = "\(rand())"
+            cell.likeCountLabel.text = "\(rand() % 300)"
         }
         return cell
     }
@@ -101,6 +125,7 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TourDetailController")
         self.navigationController?.pushViewController(controller, animated: true)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
 }
