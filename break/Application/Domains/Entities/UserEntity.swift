@@ -1,4 +1,4 @@
-// AppDelegate.swift
+// UserEntity.swift
 //
 // Copyright (c) 2016 kaneshin.co
 //
@@ -20,41 +20,48 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import UIKit
-import API
-import APIKit
-import Auth
-import Location
+import Foundation
+import RealmSwift
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class MeEntity {
 
-    var window: UIWindow?
-    
-    let facebook: FacebookApplication = FacebookApplication()
-    
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        return facebook.application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    let defaults = NSUserDefaults.standardUserDefaults()
+
+    var token: String {
+        set {
+            defaults.setObject(newValue, forKey: "me.token")
+        }
+        get {
+            if let token = defaults.objectForKey("me.token") as? String {
+                return token
+            }
+            return ""
+        }
     }
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        facebook.application(application, didFinishLaunchingWithOptions: launchOptions)
-        return true
+    var id: Int {
+        set {
+            defaults.setObject(newValue, forKey: "me.id")
+        }
+        get {
+            if let id = defaults.objectForKey("me.id") as? Int {
+                return id
+            }
+            return 0
+        }
     }
 
-    func applicationWillResignActive(application: UIApplication) {
+    func save() -> Bool {
+        return defaults.synchronize()
     }
+}
 
-    func applicationDidEnterBackground(application: UIApplication) {
-    }
-
-    func applicationWillEnterForeground(application: UIApplication) {
-    }
-
-    func applicationDidBecomeActive(application: UIApplication) {
-    }
-
-    func applicationWillTerminate(application: UIApplication) {
-    }
-
+class UserEntity: Object {
+    dynamic var id: Int = 0
+    dynamic var name: String = ""
+    dynamic var email: String = ""
+    dynamic var photoURL: String = ""
+    dynamic var activeStatus: Bool = false
+    // dynamic var token: String = ""
+    dynamic var dynamic: NSDate = NSDate()
 }

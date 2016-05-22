@@ -39,6 +39,10 @@
 		79B9B4A51CF0A3240062111C /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79B9B4A31CF0A3060062111C /* Kingfisher.framework */; };
 		79B9B4A71CF0B4C50062111C /* TourItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79B9B4A61CF0B4C50062111C /* TourItemCell.xib */; };
 		79B9B4A91CF0B55B0062111C /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9B4A81CF0B55B0062111C /* Image.swift */; };
+		79B9B4B31CF0E2650062111C /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9B4B21CF0E2650062111C /* UserEntity.swift */; };
+		79B9B4B51CF0E2780062111C /* SpotEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9B4B41CF0E2780062111C /* SpotEntity.swift */; };
+		79B9B4B71CF0E2990062111C /* TourEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9B4B61CF0E2990062111C /* TourEntity.swift */; };
+		79B9B4B91CF0E2AC0062111C /* TourSpotEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9B4B81CF0E2AC0062111C /* TourSpotEntity.swift */; };
 		EF7CCAFD1CF0888600E532A7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAFC1CF0888600E532A7 /* Realm.framework */; };
 		EF7CCB011CF0889D00E532A7 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB001CF0889D00E532A7 /* Himotoki.framework */; };
 		EF7CCB041CF0897200E532A7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCB021CF0897200E532A7 /* FBSDKCoreKit.framework */; };
@@ -182,6 +186,10 @@
 		79B9B4A31CF0A3060062111C /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		79B9B4A61CF0B4C50062111C /* TourItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TourItemCell.xib; sourceTree = "<group>"; };
 		79B9B4A81CF0B55B0062111C /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		79B9B4B21CF0E2650062111C /* UserEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		79B9B4B41CF0E2780062111C /* SpotEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotEntity.swift; sourceTree = "<group>"; };
+		79B9B4B61CF0E2990062111C /* TourEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourEntity.swift; sourceTree = "<group>"; };
+		79B9B4B81CF0E2AC0062111C /* TourSpotEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourSpotEntity.swift; sourceTree = "<group>"; };
 		EF7CCAFC1CF0888600E532A7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		EF7CCAFE1CF0888D00E532A7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		EF7CCB001CF0889D00E532A7 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
@@ -383,6 +391,10 @@
 		79B9B4A21CF0912D0062111C /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				79B9B4B21CF0E2650062111C /* UserEntity.swift */,
+				79B9B4B41CF0E2780062111C /* SpotEntity.swift */,
+				79B9B4B61CF0E2990062111C /* TourEntity.swift */,
+				79B9B4B81CF0E2AC0062111C /* TourSpotEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -569,6 +581,7 @@
 			files = (
 				EF7CCB1D1CF08CB300E532A7 /* LoginController.swift in Sources */,
 				7952C4621CF0742800E75A43 /* TourDetailController.swift in Sources */,
+				79B9B4B71CF0E2990062111C /* TourEntity.swift in Sources */,
 				799BAC401CEF80A1005F3F67 /* AppDelegate.swift in Sources */,
 				7952C4601CF070C100E75A43 /* ImageView.swift in Sources */,
 				799EACC21CF0275000AB9F9F /* TourCreateController.swift in Sources */,
@@ -578,8 +591,11 @@
 				799EAC811CF0187D00AB9F9F /* NavigationController.swift in Sources */,
 				799EACB61CF01BC500AB9F9F /* Color.swift in Sources */,
 				794951C11CF086FD00F5773A /* Date.swift in Sources */,
+				79B9B4B51CF0E2780062111C /* SpotEntity.swift in Sources */,
+				79B9B4B31CF0E2650062111C /* UserEntity.swift in Sources */,
 				799EACC01CF0272600AB9F9F /* MypageController.swift in Sources */,
 				799EACB81CF01F9F00AB9F9F /* Button.swift in Sources */,
+				79B9B4B91CF0E2AC0062111C /* TourSpotEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

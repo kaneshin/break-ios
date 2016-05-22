@@ -1,4 +1,4 @@
-// Break.swift
+// SpotEntity.swift
 //
 // Copyright (c) 2016 kaneshin.co
 //
@@ -20,17 +20,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import APIKit
+import Foundation
+import RealmSwift
 
-public protocol BreakRequestType : RequestType {
+class SpotEntity: Object {
+    dynamic var id: Int = 0
+    dynamic var userID: Int = 0
+    dynamic var visitTime: Int = 0
+    dynamic var name: String = ""
+    dynamic var email: String = ""
+    dynamic var photoURL: String = ""
+    dynamic var address: String = ""
+    dynamic var latitude: Double = 0.0
+    dynamic var longitude: Double = 0.0
+    dynamic var dynamic: NSDate = NSDate()
 }
-
-extension BreakRequestType {
-    public var baseURL:NSURL {
-        return NSURL(string: "http://img-tw.kaneshin.co/api")!
-    }
-}
-
-
-
-

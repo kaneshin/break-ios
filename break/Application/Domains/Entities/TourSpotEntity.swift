@@ -1,4 +1,4 @@
-// Break.swift
+// TourSpotEntity.swift
 //
 // Copyright (c) 2016 kaneshin.co
 //
@@ -20,17 +20,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import APIKit
+import Foundation
+import RealmSwift
 
-public protocol BreakRequestType : RequestType {
+class TourSpot: Object {
+    dynamic var tourID: Int = 0
+    dynamic var spotID: Int = 0
+    dynamic var dynamic: NSDate = NSDate()
 }
-
-extension BreakRequestType {
-    public var baseURL:NSURL {
-        return NSURL(string: "http://img-tw.kaneshin.co/api")!
-    }
-}
-
-
-
 

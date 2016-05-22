@@ -26,18 +26,43 @@ class TableViewCell: UITableViewCell {
 
 }
 
-class TourListCell: TableViewCell {
+class TourListCell: TableViewCell, UITextFieldDelegate {
+
+    @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var likeCountLabel: UILabel!
+    @IBOutlet weak var likeImageView: UIImageView!
 
     static let identifier: String = "TourListCell"
     static let nib = UINib.init(nibName: identifier, bundle: nil)
     static let heightForRow: CGFloat = 280.0
 
-    @IBOutlet weak var mainImageView: UIImageView!
-    @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var likeCountLabel: UILabel!
-    @IBOutlet weak var likeImageView: UIImageView!
+    var editable: Bool = false {
+        didSet {
+            titleTextField.enabled = editable
+        }
+    }
+
+    var hideLikeView: Bool = false {
+        didSet {
+            likeCountLabel.hidden = hideLikeView
+            likeImageView.hidden = hideLikeView
+        }
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        titleTextField.delegate = self
+        self.editable = false
+        self.hideLikeView = false
+        self.reset()
+    }
 
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -47,7 +72,7 @@ class TourListCell: TableViewCell {
     func reset() {
         mainImageView.image = nil
         userImageView.image = nil
-        titleLabel.text = ""
+        titleTextField.text = ""
         dateLabel.text = ""
         likeCountLabel.text = ""
     }
@@ -56,11 +81,36 @@ class TourListCell: TableViewCell {
         self.dateLabel.text = from.string(.TourList, to: to)
     }
 
-    func hideLikeView() {
-        self.likeCountLabel.hidden = true
-        self.likeImageView.hidden = true
+    var edited: Bool = false
+
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        if !edited {
+            textField.text = ""
+        }
+        return true
     }
-    
+
+    func textFieldDidEndEditing(textField: UITextField) {
+        if textField.text == "" {
+            edited = false
+            textField.text = "Tap to rename"
+        }
+    }
+
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        edited = true
+        return true
+    }
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    override func resignFirstResponder() -> Bool {
+        return titleTextField.resignFirstResponder()
+    }
+
 }
 
 class TourItemCell: TableViewCell {
@@ -75,6 +125,11 @@ class TourItemCell: TableViewCell {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.reset()
     }
 
     override func prepareForReuse() {

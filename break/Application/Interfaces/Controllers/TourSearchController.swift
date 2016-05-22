@@ -21,10 +21,12 @@
 // THE SOFTWARE.
 
 import UIKit
+import Location
 
 class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    let tracker = Location.Tracker()
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -35,8 +37,23 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.registerNib(TourListCell.nib, forCellReuseIdentifier: TourListCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
+        let me = MeEntity()
+        if me.token == "" {
+            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginController")
+            let delay = 0.5 * Double(NSEC_PER_SEC)
+            let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+            dispatch_after(time, dispatch_get_main_queue(), {
+                self.presentViewController(controller, animated: true, completion: nil)
+            })
+        }
     }
 
+    override func viewWillAppear(animated: Bool) {
+        let me = MeEntity()
+        if me.token != "" {
+            tracker.startUpdatingLocation()
+        }
+    }
 
     // MARK: - Table View
 
@@ -58,9 +75,9 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
             let from: NSDate = NSDate().dateByAddingTimeInterval(-10000)
             let imageURL: NSURL = NSURL(string: "http://placehold.it/\(rand()%1000)x\(rand()%1000)")!
             let userImageURL: NSURL = NSURL(string: "https://avatars2.githubusercontent.com/u/1888355?v=3&s=400")!
-            cell.mainImageView.setImageWithURL(imageURL, placeholderImage: nil, completionHandler: { (image, error) in
-            })
+            cell.mainImageView.setImageWithURL(imageURL)
             cell.userImageView.setImageWithURL(userImageURL, placeholderImage: nil, completionHandler: { (image, error) in
+                /*
                 cell.userImageView.transform = CGAffineTransformRotate(CGAffineTransformMakeScale(0.1, 0.1), 800.0)
                 UIView.animateWithDuration(1.2,
                     delay: 0.2,
@@ -70,23 +87,18 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
                     animations: {
                         cell.userImageView.transform = CGAffineTransformIdentity
                     }, completion: nil)
+                 */
             })
-            cell.titleLabel.text = "山下です。こんばんは。"
+            cell.titleTextField.text = "山下です。こんばんは。"
             cell.date(from, to: NSDate())
             cell.likeCountLabel.text = "\(rand())"
         }
         return cell
     }
 
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
-    }
-
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    }
-
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TourDetailController")
         self.navigationController?.pushViewController(controller, animated: true)
     }
+
 }

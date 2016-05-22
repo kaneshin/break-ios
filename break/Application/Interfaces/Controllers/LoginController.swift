@@ -10,6 +10,7 @@ import UIKit
 import API
 import Auth
 import APIKit
+import RealmSwift
 
 class LoginController: UIViewController, UIScrollViewDelegate {
     
@@ -27,10 +28,27 @@ class LoginController: UIViewController, UIScrollViewDelegate {
         Session.sendRequest(request) { response in
             switch response {
             case .Success(let meResponse):
-                print(meResponse)
-                let ud = NSUserDefaults.standardUserDefaults()
-                ud.setObject("token", forKey: meResponse.token)
-                self.pushToTourSearchController()
+                let realm = try! Realm()
+                let id = meResponse.id
+                if let user = realm.objects(UserEntity).filter("id = \(id)").first {
+                    try! realm.write {
+                        user.name = meResponse.name
+                        user.photoURL = meResponse.photoURL.absoluteString
+                    }
+                } else {
+                    try! realm.write {
+                        let user: UserEntity = UserEntity()
+                        user.id = id
+                        user.name = meResponse.name
+                        // user.email = meResponse.email
+                        user.photoURL = meResponse.photoURL.absoluteString
+                        realm.add(user)
+                    }
+                }
+                let me = MeEntity()
+                me.id = id
+                me.token = meResponse.token
+                self.dismissViewControllerAnimated(true, completion: nil)
                 break
             case .Failure(let error):
                 print(error)
