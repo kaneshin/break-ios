@@ -45,4 +45,22 @@ class Tests: XCTestCase {
         self.waitForExpectationsWithTimeout(10.0, handler: nil)
     }
 
+//    func testTour() {
+//        let expectation = expectationWithDescription("tour")
+//
+//        let request = GetTourRequest()
+//
+//        Session.sendRequest(request) { result in
+//            switch result {
+//            case .Success(let welcomeData):
+//                XCTAssertEqual("", welcomeData.defaultNickname)
+//                XCTAssertEqual(13, welcomeData.defaultResidenceStateID)
+//            case .Failure(let error):
+//                XCTAssertNotNil(error)
+//            }
+//            expectation.fulfill()
+//        }
+//        self.waitForExpectationsWithTimeout(10.0, handler: nil)
+//    }
+
 }
