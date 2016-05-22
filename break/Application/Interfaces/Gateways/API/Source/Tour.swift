@@ -48,7 +48,7 @@ extension TourResponse : Decodable {
 
 public struct CreateTourRequest: BreakRequestType {
     
-    public typealias Response = TourResponse
+    public typealias Response = [String: AnyObject]
     
     var params: [String: AnyObject] = [:]
     
@@ -80,19 +80,17 @@ public struct CreateTourRequest: BreakRequestType {
     }
     
     public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) -> Response? {
-        print(object)
-        return nil
+        return [:]
     }
 }
 
 public struct GetTourRequest: BreakRequestType {
     
-    public typealias Response = TourResponse
+    public typealias Response = [TourResponse]
     
     var params: [String: AnyObject] = [:]
     
-    public init() {
-    }
+    public init() {}
     
     public mutating func setLatLng(lat:Double, lng:Double) {
         params["lat"] = lat
@@ -125,7 +123,17 @@ public struct GetTourRequest: BreakRequestType {
     }
     
     public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) -> Response? {
-        print(object)
-        return try? decodeValue(object["instances"] as! [String:AnyObject])
+        guard let instances = object["instances"] as? [AnyObject] else {
+            return nil
+        }
+        var response: [TourResponse] = []
+        for instance in instances {
+            if let ins = instance as? [String: AnyObject] {
+                let ret: TourResponse = try! decodeValue(ins)
+                response.append(ret)
+            }
+        }
+        return response
     }
+
 }
