@@ -52,22 +52,7 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
             })
         }
 
-        var dat: [String: AnyObject] = [:]
-        dat["id"] = 3
-        dat["name"] = "Awesome De Nang!"
-        dat["photo_url"] = "http://s32.postimg.org/g3wjwlu7p/12665830_1015751411819209_1013964377_n.jpg"
-        dat["taken_hour"] = 31.0
-        
-        let realm = try! Realm()
-        if let user = realm.objects(UserEntity).filter("id = %d", me.id).last {
-            var udat: [String: AnyObject] = [:]
-            udat["id"] = user.id
-            udat["name"] = user.name
-            udat["photo_url"] = user.photoURL
-            dat["user"] = udat
-        }
-        let tour: TourResponse = try! decodeValue(dat)
-
+        let tour: TourResponse = Sample().TourResponse(1)
         self.tours = [tour]
 
         return
@@ -144,7 +129,15 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let row = indexPath.row
+        if self.tours.count <= row {
+            return
+        }
+        let tour = self.tours[row]
         let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TourDetailController")
+        if let c = controller as? TourDetailController {
+            c.tour = tour
+        }
         self.navigationController?.pushViewController(controller, animated: true)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }

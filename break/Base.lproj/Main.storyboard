@@ -97,36 +97,6 @@
             </objects>
             <point key="canvasLocation" x="563" y="588"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="H3a-oL-w5P">
-            <objects>
-                <viewController id="MF4-do-m1d" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="DCL-k0-H36"/>
-                        <viewControllerLayoutGuide type="bottom" id="CMJ-HZ-min"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="M4w-jn-F66">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bG8-rp-cna">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="CMJ-HZ-min" firstAttribute="top" secondItem="bG8-rp-cna" secondAttribute="bottom" id="1zL-OR-xoR"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bG8-rp-cna" secondAttribute="trailing" constant="-20" id="7bi-G9-XTX"/>
-                            <constraint firstItem="bG8-rp-cna" firstAttribute="leading" secondItem="M4w-jn-F66" secondAttribute="leadingMargin" constant="-20" id="NRu-Z5-N4u"/>
-                            <constraint firstItem="bG8-rp-cna" firstAttribute="top" secondItem="DCL-k0-H36" secondAttribute="bottom" constant="-20" id="ZbS-1J-Oax"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Rk4-3Y-8yu"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hla-qE-RQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1350" y="1380"/>
-        </scene>
         <!--Tour Create Controller-->
         <scene sceneID="PTM-pC-Bdm">
             <objects>
@@ -190,10 +160,11 @@
                             <constraint firstItem="5pJ-fs-hbg" firstAttribute="top" secondItem="rdn-1X-qi9" secondAttribute="bottom" id="0fr-aA-yLd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rdn-1X-qi9" secondAttribute="trailing" constant="-20" id="7Bg-hR-ldk"/>
                             <constraint firstItem="rdn-1X-qi9" firstAttribute="leading" secondItem="c5x-ag-DwD" secondAttribute="leadingMargin" constant="-20" id="NkG-4M-cLt"/>
-                            <constraint firstItem="rdn-1X-qi9" firstAttribute="top" secondItem="68d-T9-SrN" secondAttribute="bottom" constant="-20" id="eXV-ZJ-yQO"/>
+                            <constraint firstItem="rdn-1X-qi9" firstAttribute="top" secondItem="68d-T9-SrN" secondAttribute="bottom" constant="-64" id="eXV-ZJ-yQO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="iXI-s6-Y1K"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="rdn-1X-qi9" id="Tfz-yR-fBL"/>
                     </connections>
