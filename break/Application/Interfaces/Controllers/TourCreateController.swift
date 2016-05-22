@@ -32,12 +32,13 @@ class TourCreateController: UIViewController, UITableViewDelegate, UITableViewDa
 
     var spots: [SpotResponse] = []
     
-    
     @IBOutlet weak var tableView: UITableView!
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    var didHideHeader: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +93,8 @@ class TourCreateController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell:TourListCell = UINib(nibName: TourListCell.identifier, bundle: nil).instantiateWithOwner(self, options: nil)[0] as! TourListCell
         cell.userImageView.image = nil;
         cell.editable = true
+        cell.titleTextField.text = "tap to rename"
+        cell.dateLabel.text = "about 1 hour"
         cell.hideLikeView = true
         cell.mainImageView.backgroundColor = UIColor.lightGrayColor()
         cell.likeActionButton.hidden = true
@@ -132,6 +135,21 @@ class TourCreateController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         return cell
     }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if  scrollView.contentOffset.y <= self.tableView.sectionHeaderHeight && scrollView.contentOffset.y >= 0 {
+            let statusBarHeight: CGFloat = UIApplication.sharedApplication().statusBarFrame.height
+            let navBarHeight = self.navigationController?.navigationBar.frame.size.height
+            if self.didHideHeader {
+                scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y + statusBarHeight + navBarHeight!, 0, 0, 0);
+            } else {
+                scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+            }
+        } else if scrollView.contentOffset.y >= self.tableView.sectionHeaderHeight {
+            scrollView.contentInset = UIEdgeInsetsMake(-self.tableView.sectionHeaderHeight, 0, 0, 0);
+            self.didHideHeader = true
+        }
+    }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -139,6 +157,15 @@ class TourCreateController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return false
+    }
+    
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView:TourCreateItemCell = UINib(nibName: TourCreateItemCell.identifier, bundle: nil).instantiateWithOwner(self, options: nil)[0] as! TourCreateItemCell
+        return footerView
+    }
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return TourCreateItemCell.heightForRow
     }
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {

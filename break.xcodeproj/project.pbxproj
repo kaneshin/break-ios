@@ -57,6 +57,7 @@
 		EF7CCB151CF08C3800E532A7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAFC1CF0888600E532A7 /* Realm.framework */; };
 		EF7CCB161CF08C3800E532A7 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF7CCAFC1CF0888600E532A7 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EF7CCB1D1CF08CB300E532A7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CCB1C1CF08CB300E532A7 /* LoginController.swift */; };
+		EF9F6CFD1CF170E3007FF79D /* TourCreateItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF9F6CFC1CF170E3007FF79D /* TourCreateItemCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +197,7 @@
 		EF7CCB021CF0897200E532A7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = break/Application/Interfaces/Gateways/Auth/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		EF7CCB031CF0897200E532A7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = break/Application/Interfaces/Gateways/Auth/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		EF7CCB1C1CF08CB300E532A7 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		EF9F6CFC1CF170E3007FF79D /* TourCreateItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TourCreateItemCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +350,7 @@
 				7952C3BE1CF035D900E75A43 /* TableViewCell.swift */,
 				7952C3C01CF0396300E75A43 /* TourListCell.xib */,
 				79B9B4A61CF0B4C50062111C /* TourItemCell.xib */,
+				EF9F6CFC1CF170E3007FF79D /* TourCreateItemCell.xib */,
 			);
 			path = Presentations;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				79B9B4A71CF0B4C50062111C /* TourItemCell.xib in Resources */,
 				7952C3C11CF0396300E75A43 /* TourListCell.xib in Resources */,
 				799BAC421CEF80A1005F3F67 /* Assets.xcassets in Resources */,
+				EF9F6CFD1CF170E3007FF79D /* TourCreateItemCell.xib in Resources */,
 				799BAC441CEF80A1005F3F67 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
