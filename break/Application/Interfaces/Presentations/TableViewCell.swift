@@ -34,6 +34,7 @@ class TourListCell: TableViewCell, UITextFieldDelegate {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var likeCountLabel: UILabel!
     @IBOutlet weak var likeImageView: UIImageView!
+    @IBOutlet weak var likeActionButton: UIButton!
 
     static let identifier: String = "TourListCell"
     static let nib = UINib.init(nibName: identifier, bundle: nil)

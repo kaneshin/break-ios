@@ -41,11 +41,10 @@ class TourCreateController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.registerNib(TourItemCell.nib, forCellReuseIdentifier: TourListCell.identifier)
         tableView.registerNib(TourItemCell.nib, forCellReuseIdentifier: TourItemCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.sectionHeaderHeight = 200
+        tableView.sectionHeaderHeight = TourListCell.heightForRow
         
         // tracker.stopUpdatingLocation()
         let now = NSDate().timeIntervalSince1970
@@ -90,16 +89,22 @@ class TourCreateController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: - Table View
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCellWithIdentifier(TourListCell.identifier)
-        if let cell = cell as? TourListCell {
-            let realm = try! Realm()
-            let meEntity = MeEntity()
-            print(meEntity)
-            if let user = realm.objects(UserEntity).filter("id = \(meEntity.id)").last {
-                let userImageURL: NSURL = NSURL(fileURLWithPath: (user.photoURL))
-                cell.userImageView.setImageWithURL(userImageURL, placeholderImage: nil, completionHandler:nil)
+        let cell:TourListCell = UINib(nibName: TourListCell.identifier, bundle: nil).instantiateWithOwner(self, options: nil)[0] as! TourListCell
+        cell.userImageView.image = nil;
+        cell.editable = true
+        cell.hideLikeView = true
+        cell.mainImageView.backgroundColor = UIColor.lightGrayColor()
+        cell.likeActionButton.hidden = true
+        let me = MeEntity()
+        let realm = try! Realm()
+        if let user = realm.objects(UserEntity).filter("id = %d", me.id).last {
+            let data = NSData(contentsOfURL: NSURL(string: user.photoURL)!)
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+                let image = UIImage(data: data!)
+                dispatch_async(dispatch_get_main_queue()) {
+                    cell.userImageView.image = image;
+                }
             }
-            cell.userImageView.setImageWithURL(NSURL(fileURLWithPath: "https://scontent.xx.fbcdn.net/v/t1.0-1/p200x200/10959521_615826671880723_1191735095536536476_n.jpg?oh=5e84e1e18c0c699a59ebeaf1d0d9651e&oe=57CE5D42"), placeholderImage: nil, completionHandler:nil)
         }
         return cell
     }
