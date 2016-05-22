@@ -137,6 +137,7 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
         let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TourDetailController")
         if let c = controller as? TourDetailController {
             c.tour = tour
+            c.navigationItem.title = tour.name
         }
         self.navigationController?.pushViewController(controller, animated: true)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

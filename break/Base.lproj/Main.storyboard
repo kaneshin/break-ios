@@ -138,7 +138,7 @@
             </objects>
             <point key="canvasLocation" x="563" y="1380"/>
         </scene>
-        <!--Title-->
+        <!--Tour Detail Controller-->
         <scene sceneID="5sX-n6-4ql">
             <objects>
                 <viewController storyboardIdentifier="TourDetailController" id="c9U-qy-Pqf" customClass="TourDetailController" customModule="break" customModuleProvider="target" sceneMemberID="viewController">
@@ -163,7 +163,7 @@
                             <constraint firstItem="rdn-1X-qi9" firstAttribute="top" secondItem="68d-T9-SrN" secondAttribute="bottom" constant="-64" id="eXV-ZJ-yQO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="iXI-s6-Y1K"/>
+                    <navigationItem key="navigationItem" id="iXI-s6-Y1K"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="rdn-1X-qi9" id="Tfz-yR-fBL"/>
