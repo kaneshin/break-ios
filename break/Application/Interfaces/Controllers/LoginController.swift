@@ -49,6 +49,7 @@ class LoginController: UIViewController, UIScrollViewDelegate {
                 me.id = id
                 me.token = meResponse.token
                 self.dismissViewControllerAnimated(true, completion: nil)
+                self.pushToTourSearchController()
                 break
             case .Failure(let error):
                 print(error)

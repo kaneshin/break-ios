@@ -27,7 +27,7 @@ public protocol BreakRequestType : RequestType {
 
 extension BreakRequestType {
     public var baseURL:NSURL {
-        return NSURL(string: "http://img-tw.kaneshin.co/api")!
+        return NSURL(string: "http://localhost:8888/api")!
     }
 }
 

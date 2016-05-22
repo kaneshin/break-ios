@@ -49,6 +49,8 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.hidesBackButton = true
         let me = MeEntity()
         if me.token != "" {
             tracker.startUpdatingLocation()

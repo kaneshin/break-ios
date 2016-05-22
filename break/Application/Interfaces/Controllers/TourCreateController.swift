@@ -27,8 +27,10 @@ import APIKit
 
 class TourCreateController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let tracker: Tracker = Tracker()
+    //let tracker: Tracker = Tracker()
 
+    var spots: [SpotEntity] = []
+    
     enum Section: Int {
         case List
         case Item
@@ -61,22 +63,23 @@ class TourCreateController: UIViewController, UITableViewDelegate, UITableViewDa
         // tracker.stopUpdatingLocation()
         let me = MeEntity()
         let now = NSDate().timeIntervalSince1970
-        let records: [Location] = tracker.find(me.lastRecordTime, to: now, limit: 5)
+        //let records: [Location] = tracker.find(me.lastRecordTime, to: now, limit: 5)
 
         var logs: [SpotLog] = []
-        for record in records {
-            let log: SpotLog = SpotLog(t: Int(record.recordTime), lat: record.latitude, lng: record.longitude)
-            logs.append(log)
-        }
-
+        //for record in records {
+            // let log: SpotLog = SpotLog(t: Int(record.recordTime), lat: record.latitude, lng: record.longitude)
+            // logs.append(log)
+        //}
+        //35.66938789010993,139.7162959157403
+        let currentSpotLog = SpotLog(t: Int(now), lat: 35.66938789010993, lng: 139.7162959157403)
+        logs.append(currentSpotLog)
+        
         let request: CreateSpotRequest = CreateSpotRequest(spotLogs: logs)
         Session.sendRequest(request) { response in
             switch response {
             case .Success( _):
-//                me.lastRecordTime = now
-//                me.save()
                 var req: GetSpotRequest = GetSpotRequest()
-                req.setVisitRange(Int(me.lastRecordTime), endVisitTime: Int(now))
+                req.setVisitRange(Int(now) - 10, endVisitTime: Int(now) + 10)
                 Session.sendRequest(req) { response in
                     switch response {
                     case .Success(let response):
