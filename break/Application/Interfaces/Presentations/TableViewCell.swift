@@ -150,7 +150,7 @@ class TourCreateItemCell: TableViewCell {
     static let identifier: String = "TourCreateItemCell"
     static let nib = UINib.init(nibName: identifier, bundle: nil)
     static let heightForRow: CGFloat = 60.0
-    
+  
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

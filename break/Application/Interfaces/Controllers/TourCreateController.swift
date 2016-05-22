@@ -161,7 +161,13 @@ class TourCreateController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView:TourCreateItemCell = UINib(nibName: TourCreateItemCell.identifier, bundle: nil).instantiateWithOwner(self, options: nil)[0] as! TourCreateItemCell
+        let gesture = UITapGestureRecognizer(target:self, action: #selector(TourCreateController.didClickFooterView(_:)))
+        footerView.addGestureRecognizer(gesture)
         return footerView
+    }
+
+    func didClickFooterView(recognizer: UIGestureRecognizer) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
