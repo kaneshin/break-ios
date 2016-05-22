@@ -46,7 +46,6 @@ class LoginController: UIViewController, UIScrollViewDelegate {
                     }
                 }
                 let me = MeEntity()
-                me.id = id
                 me.token = meResponse.token
                 self.dismissViewControllerAnimated(true, completion: nil)
                 self.pushToTourSearchController()

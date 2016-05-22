@@ -24,29 +24,15 @@ import UIKit
 import Location
 import API
 import APIKit
+import RealmSwift
 
 class TourCreateController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     //let tracker: Tracker = Tracker()
 
-    var spots: [SpotEntity] = []
+    var spots: [SpotResponse] = []
     
-    enum Section: Int {
-        case List
-        case Item
-        case Unknown
-        var identifier: String {
-            switch self {
-            case .List:
-                return "TourListCell"
-            case .Item:
-                return "TourItemCell"
-            default:
-                return "Cell"
-            }
-        }
-    }
-
+    
     @IBOutlet weak var tableView: UITableView!
 
     required init?(coder aDecoder: NSCoder) {
@@ -55,13 +41,13 @@ class TourCreateController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.registerNib(TourListCell.nib, forCellReuseIdentifier: TourListCell.identifier)
+        tableView.registerNib(TourItemCell.nib, forCellReuseIdentifier: TourListCell.identifier)
         tableView.registerNib(TourItemCell.nib, forCellReuseIdentifier: TourItemCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
-
+        tableView.sectionHeaderHeight = 200
+        
         // tracker.stopUpdatingLocation()
-        let me = MeEntity()
         let now = NSDate().timeIntervalSince1970
         //let records: [Location] = tracker.find(me.lastRecordTime, to: now, limit: 5)
 
@@ -84,6 +70,8 @@ class TourCreateController: UIViewController, UITableViewDelegate, UITableViewDa
                     switch response {
                     case .Success(let response):
                         print(response)
+                        self.spots = response
+                        self.tableView.reloadData()
                         break
                     case .Failure(let error):
                         print(error)
@@ -100,46 +88,42 @@ class TourCreateController: UIViewController, UITableViewDelegate, UITableViewDa
 
 
     // MARK: - Table View
-
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return Section.Unknown.rawValue
-    }
-
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sec: Section = Section.init(rawValue: section)!
-        switch sec {
-        case .Item:
-            return 100
-        default:
-            return 1
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCellWithIdentifier(TourListCell.identifier)
+        if let cell = cell as? TourListCell {
+            let realm = try! Realm()
+            let meEntity = MeEntity()
+            print(meEntity)
+            if let user = realm.objects(UserEntity).filter("id = \(meEntity.id)").last {
+                let userImageURL: NSURL = NSURL(fileURLWithPath: (user.photoURL))
+                cell.userImageView.setImageWithURL(userImageURL, placeholderImage: nil, completionHandler:nil)
+            }
+            cell.userImageView.setImageWithURL(NSURL(fileURLWithPath: "https://scontent.xx.fbcdn.net/v/t1.0-1/p200x200/10959521_615826671880723_1191735095536536476_n.jpg?oh=5e84e1e18c0c699a59ebeaf1d0d9651e&oe=57CE5D42"), placeholderImage: nil, completionHandler:nil)
         }
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.spots.count
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let sec: Section = Section.init(rawValue: indexPath.section)!
-        switch sec {
-        case .Item:
-            return TourItemCell.heightForRow
-        default:
-            return TourListCell.heightForRow
-        }
+        return TourItemCell.heightForRow
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = {
-            let sec: Section = Section.init(rawValue: indexPath.section)!
-            return tableView.dequeueReusableCellWithIdentifier(sec.identifier, forIndexPath: indexPath)
+            return tableView.dequeueReusableCellWithIdentifier(TourItemCell.identifier, forIndexPath: indexPath)
         }()
-        if let cell = cell as? TourListCell {
-            cell.editable = true
-            cell.hideLikeView = true
-            let from: NSDate = NSDate().dateByAddingTimeInterval(-10000)
-            let imageURL: NSURL = NSURL(string: "http://placehold.it/\(rand()%1000)x\(rand()%1000)")!
-            let userImageURL: NSURL = NSURL(string: "https://avatars2.githubusercontent.com/u/1888355?v=3&s=400")!
-            cell.mainImageView.setImageWithURL(imageURL)
-            cell.userImageView.setImageWithURL(userImageURL)
-            cell.titleTextField.text = "Tap to rename"
-            cell.date(from, to: NSDate())
+        if let cell = cell as? TourItemCell {
+            let spot = self.spots[indexPath.row]
+            cell.detailLabel.text = spot.name
+            let date = NSDate(timeIntervalSince1970: Double(spot.visitTime))
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "HH:mm"
+            let dateStr: String = formatter.stringFromDate(date)
+            cell.dateLabel.text = dateStr
         }
         return cell
     }
@@ -147,11 +131,9 @@ class TourCreateController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return false
-    }
-
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     }
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {

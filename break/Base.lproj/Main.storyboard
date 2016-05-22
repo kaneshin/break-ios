@@ -51,7 +51,7 @@
                     <navigationItem key="navigationItem" id="VH0-yB-r8c">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="1Ec-lP-kI2">
-                            <rect key="frame" x="180" y="5.5" width="240" height="33"/>
+                            <rect key="frame" x="67.5" y="5.5" width="240" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_logo_head_break" translatesAutoresizingMaskIntoConstraints="NO" id="g6h-Om-Tmp">
