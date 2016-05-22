@@ -24,11 +24,14 @@ import UIKit
 import Location
 import API
 import APIKit
+import RealmSwift
+import Himotoki
 
 class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     let tracker: Tracker = Tracker()
+    var tours: [TourResponse] = []
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -49,29 +52,41 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
             })
         }
 
-//        var request: GetTourRequest = GetTourRequest()
-//        request.setLatLng(<#T##lat: Double##Double#>, lng: <#T##Double#>)
-//        Session.sendRequest(request) { response in
-//            switch response {
-//            case .Success( _):
-//                var req: GetSpotRequest = GetSpotRequest()
-//                req.setVisitRange(Int(now) - 10, endVisitTime: Int(now) + 10)
-//                Session.sendRequest(req) { response in
-//                    switch response {
-//                    case .Success(let response):
-//                        print(response)
-//                        break
-//                    case .Failure(let error):
-//                        print(error)
-//                        break
-//                    }
-//                }
-//                break
-//            case .Failure(let error):
-//                print(error)
-//                break
-//            }
-//        }
+        var dat: [String: AnyObject] = [:]
+        dat["id"] = 3
+        dat["name"] = "Awesome De Nang!"
+        dat["photo_url"] = "http://s32.postimg.org/g3wjwlu7p/12665830_1015751411819209_1013964377_n.jpg"
+        dat["taken_hour"] = 31.0
+        
+        let realm = try! Realm()
+        if let user = realm.objects(UserEntity).filter("id = %d", me.id).last {
+            var udat: [String: AnyObject] = [:]
+            udat["id"] = user.id
+            udat["name"] = user.name
+            udat["photo_url"] = user.photoURL
+            dat["user"] = udat
+        }
+        let tour: TourResponse = try! decodeValue(dat)
+
+        self.tours = [tour]
+
+        return
+        guard let loc = tracker.findLatest() else {
+            return
+        }
+        var request: GetTourRequest = GetTourRequest()
+        request.setLatLng(loc.latitude, lng: loc.longitude)
+        Session.sendRequest(request) { response in
+            switch response {
+            case .Success(let response):
+                self.tours = response
+                self.tableView.reloadData()
+                break
+            case .Failure(let error):
+                print(error)
+                break
+            }
+        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -90,7 +105,7 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return self.tours.count
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -98,11 +113,15 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let row = indexPath.row
+        if self.tours.count <= row {
+            return UITableViewCell()
+        }
+        let tour = self.tours[row]
         let cell = tableView.dequeueReusableCellWithIdentifier("TourListCell", forIndexPath: indexPath)
         if let cell = cell as? TourListCell {
-            let from: NSDate = NSDate().dateByAddingTimeInterval(-10000)
-            let imageURL: NSURL = NSURL(string: "http://placehold.it/\(rand()%1000)x\(rand()%1000)")!
-            let userImageURL: NSURL = NSURL(string: "https://avatars2.githubusercontent.com/u/1888355?v=3&s=400")!
+            let imageURL: NSURL = tour.photoURL
+            let userImageURL: NSURL = tour.user.photoURL
             cell.mainImageView.setImageWithURL(imageURL)
             cell.userImageView.setImageWithURL(userImageURL, placeholderImage: nil, completionHandler: { (image, error) in
 //                cell.userImageView.transform = CGAffineTransformRotate(CGAffineTransformMakeScale(0.1, 0.1), 800.0)
@@ -115,9 +134,11 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
 //                        cell.userImageView.transform = CGAffineTransformIdentity
 //                    }, completion: nil)
             })
-            cell.titleTextField.text = "Awesome Trip"
-            cell.date(from, to: NSDate())
-            cell.likeCountLabel.text = "\(rand() % 300)"
+            cell.titleTextField.text = tour.name
+            // let from: NSDate = NSDate().dateByAddingTimeInterval(-10000)
+            // cell.date(from, to: NSDate())
+            cell.dateLabel.text = "\(tour.takenHour) Hours"
+            cell.likeCountLabel.text = "\(rand() % 200)"
         }
         return cell
     }
