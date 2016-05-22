@@ -122,7 +122,7 @@ class TourSearchController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.titleTextField.text = tour.name
             // let from: NSDate = NSDate().dateByAddingTimeInterval(-10000)
             // cell.date(from, to: NSDate())
-            cell.dateLabel.text = "\(tour.takenHour) Hours"
+            cell.date(Double(tour.takenHour))
             cell.likeCountLabel.text = "\(rand() % 200)"
         }
         return cell

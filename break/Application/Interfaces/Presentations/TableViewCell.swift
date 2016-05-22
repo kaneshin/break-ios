@@ -82,6 +82,10 @@ class TourListCell: TableViewCell, UITextFieldDelegate {
         self.dateLabel.text = from.string(.TourList, to: to)
     }
 
+    func date(took: Double) {
+        self.dateLabel.text = "Aboud \(took) h"
+    }
+
     var edited: Bool = false
 
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {

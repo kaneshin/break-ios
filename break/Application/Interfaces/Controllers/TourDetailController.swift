@@ -133,7 +133,8 @@ class TourDetailController: UIViewController, UITableViewDelegate, UITableViewDa
                 cell.mainImageView.setImageWithURL(imageURL)
                 cell.userImageView.setImageWithURL(userImageURL)
                 cell.titleTextField.text = tour.name
-                cell.dateLabel.text = "\(tour.takenHour) Hours"
+//                cell.dateLabel.text = "\(tour.takenHour) Hours"
+                cell.date(Double(tour.takenHour))
                 cell.likeCountLabel.text = "\(rand() % 200)"
             }
         } else if let cell = cell as? TourItemCell {
